@@ -1,0 +1,92 @@
+version: '3.7'
+
+x-env: &env
+  RAILS_LOG_TO_STDOUT: 1
+  PORT: 3000
+  RAILS_MAX_THREADS: 5
+
+  DATABASE_HOST: db
+  DATABASE_USER: postgres
+  DATABASE_PASS: postgres
+  REDIS_URL: redis://redis:6379/14
+
+x-build: &build
+  build:
+    context: .
+
+services:
+  redis:
+    image: redis:6-alpine
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/data
+
+  db:
+    image: postgres:14.1-alpine3.15
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  api:
+    <<: *build
+    entrypoint: sh ./scripts/entrypoint.sh
+    # command: sh /app/dockerfiles/start-rails.sh rails s -b '0.0.0.0'
+    tty: true
+    stdin_open: true
+    environment:
+      <<: *env
+      DATABASE_NAME: ut-bots-api-db
+    healthcheck:
+      disable: true
+    volumes:
+      - .:/app
+      - bundle:/bundle
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+      # - redis
+      # - sidekiq
+
+  # sidekiq:
+  #   <<: *build
+  #   command: 'sidekiq'
+  #   environment:
+  #     <<: *env
+  #     DATABASE_NAME: ut-bots-api-db
+  #   healthcheck:
+  #     disable: true
+  #   volumes:
+  #     - .:/app
+  #     - bundle:/bundle
+  #   depends_on:
+  #     - db
+  #     - redis
+
+  test:
+    <<: *build
+    environment:
+      <<: *env
+      DATABASE_NAME: ut-bots-api-test-db
+      RAILS_ENV: test
+      RAILS_LOG_TO_STDOUT:
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - .:/app:delegated
+      - ./tmp/rspec:/rspec:cached
+      - bundle:/bundle:delegated
+
+  # rubocop:
+  #   <<: *build
+  #   command: rubocop --format tap --format junit --out /app/tmp/rubocop/results.xml
+
+volumes:
+  redis:
+  bundle:
