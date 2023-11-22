@@ -1,0 +1,21 @@
+<div id="<%= dom_id record %>" class="card">
+  <div class="card-header">
+    <h2>
+      <%= record.name %>
+
+      <% if record.respond_to?(:vanilla) && record.vanilla %>
+        <span class="badge bg-warning">Vanilla</span>
+      <% else %>
+        <span class="badge bg-info">Mod</span>
+      <% end %>
+    </h2>
+  </div>
+
+  <div class="card-body">
+    <%= record.description %>
+  </div>
+
+  <div class="card-footer">
+    <%= record.ut_value %>
+  </div>
+</div>

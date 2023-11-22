@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @player_model_skin %>
+
+<div>
+  <%= link_to "Edit this player model skin", edit_player_model_skin_path(@player_model_skin) %> |
+  <%= link_to "Back to player model skins", player_model_skins_path %>
+
+  <%= button_to "Destroy this player model skin", @player_model_skin, method: :delete %>
+</div>

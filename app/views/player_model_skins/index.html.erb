@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Player model skins</h1>
+
+<div id="player_model_skins">
+  <% @player_model_skins.each do |player_model_skin| %>
+    <%= render player_model_skin %>
+    <p>
+      <%= link_to "Show this player model skin", player_model_skin %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New player model skin", new_player_model_skin_path %>

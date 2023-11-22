@@ -1,0 +1,17 @@
+<%= form_with(model: botlist) do |form| %>
+  <% if botlist.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(botlist.errors.count, "error") %> prohibited this botlist from being saved:</h2>
+
+      <ul>
+        <% botlist.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Team bots</h1>
+
+<div id="team_bots">
+  <% @team_bots.each do |team_bot| %>
+    <%= render team_bot %>
+    <p>
+      <%= link_to "Show this team bot", team_bot %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New team bot", new_team_bot_path %>

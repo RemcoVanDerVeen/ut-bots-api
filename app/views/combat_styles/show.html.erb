@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <p style="color: green"><%= notice %></p>
+
+  <%= link_to "Return to index", combat_styles_path, class: "btn btn-primary btn-sm" %>
+  <br/>
+  <br/>
+
+  <%= render @combat_style, show: false %>
+
+  <br/>
+  <%= link_to "Edit", edit_combat_style_path(@combat_style), class: "btn btn-primary btn-sm" %>
+  <%= button_to "Destroy", @combat_style, method: :delete, class: "btn btn-outline-danger btn-sm" %>
+</div>

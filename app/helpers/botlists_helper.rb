@@ -1,0 +1,2 @@
+module BotlistsHelper
+end

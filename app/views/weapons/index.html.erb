@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <p style="color: green"><%= notice %></p>
+
+  <h1>Weapons</h1>
+
+  <%= link_to "New weapon", new_weapon_path, class: "btn btn-primary" %>
+  <br/>
+  <br/>
+
+  <div id="weapons">
+    <%= render "shared/index", collection: @weapons %>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Xbots configuration botlists</h1>
+
+<div id="xbots_configuration_botlists">
+  <% @xbots_configuration_botlists.each do |xbots_configuration_botlist| %>
+    <%= render xbots_configuration_botlist %>
+    <p>
+      <%= link_to "Show this xbots configuration botlist", xbots_configuration_botlist %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New xbots configuration botlist", new_xbots_configuration_botlist_path %>

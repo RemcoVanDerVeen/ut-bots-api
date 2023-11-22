@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <p style="color: green"><%= notice %></p>
+
+  <h1>Player models</h1>
+
+  <%= link_to "New player model", new_player_model_path, class: "btn btn-primary" %>
+  <br/>
+  <br/>
+
+  <div id="player_models">
+    <%= render "shared/index", collection: @player_models %>
+  </div>
+</div>

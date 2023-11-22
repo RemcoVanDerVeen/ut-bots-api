@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Mod sub types</h1>
+
+<div id="mod_sub_types">
+  <% @mod_sub_types.each do |mod_sub_type| %>
+    <%= render mod_sub_type %>
+    <p>
+      <%= link_to "Show this mod sub type", mod_sub_type %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New mod sub type", new_mod_sub_type_path %>

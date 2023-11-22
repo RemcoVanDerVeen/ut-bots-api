@@ -1,0 +1,5 @@
+<%= simple_form_for(@player_model) do |f| %>
+  <%= render "shared/form", f: f do %>
+    <%= f.association :voice_packs, as: :check_boxes, checked: @player_model.voice_pack_ids %>
+  <% end %>
+<% end %>

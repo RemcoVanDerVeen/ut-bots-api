@@ -1,0 +1,31 @@
+<div id="<%= dom_id voice_pack %>" class="card">
+  <div class="card-header">
+    <h2>
+      <%= voice_pack.name %>
+
+      <% if voice_pack.vanilla %>
+        <span class="badge bg-warning">Vanilla</span>
+      <% else %>
+        <span class="badge bg-info">Mod</span>
+      <% end %>
+    </h2>
+  </div>
+
+  <div class="card-body">
+    <%= voice_pack.description %>
+    <br/>
+    <% if voice_pack.has_all_sounds? %>
+      <span class="badge bg-success">Complete</span>
+    <% else %>
+      <span class="badge bg-warning">Incomplete</span>
+    <% end %>
+    <hr/>
+
+    <h3>Associated player models</h3>
+    <%= render "shared/index", collection: voice_pack.player_models %>
+  </div>
+
+  <div class="card-footer">
+    <%= voice_pack.ut_value %>
+  </div>
+</div>

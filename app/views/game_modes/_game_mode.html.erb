@@ -1,0 +1,21 @@
+<div id="<%= dom_id game_mode %>" class="card">
+  <div class="card-header">
+    <h2>
+      <%= game_mode.name %>
+
+      <% if game_mode.vanilla %>
+        <span class="badge bg-warning">Vanilla</span>
+      <% else %>
+        <span class="badge bg-info">Mod</span>
+      <% end %>
+    </h2>
+  </div>
+
+  <div class="card-body">
+    <%= game_mode.description %>
+  </div>
+
+  <div class="card-footer">
+    <%= game_mode.ut_value %>
+  </div>
+</div>

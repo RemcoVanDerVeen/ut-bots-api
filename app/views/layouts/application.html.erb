@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title>UT Bots API</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render partial: "layouts/topbar" %>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <%= render partial: "layouts/sidebar" %>
+      </div>
+      <div class="col-sm-8">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

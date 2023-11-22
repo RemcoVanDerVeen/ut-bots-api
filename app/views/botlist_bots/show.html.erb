@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @botlist_bot %>
+
+<div>
+  <%= link_to "Edit this botlist bot", edit_botlist_bot_path(@botlist_bot) %> |
+  <%= link_to "Back to botlist bots", botlist_bots_path %>
+
+  <%= button_to "Destroy this botlist bot", @botlist_bot, method: :delete %>
+</div>

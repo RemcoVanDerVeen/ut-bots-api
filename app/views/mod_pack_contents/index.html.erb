@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Mod pack contents</h1>
+
+<div id="mod_pack_contents">
+  <% @mod_pack_contents.each do |mod_pack_content| %>
+    <%= render mod_pack_content %>
+    <p>
+      <%= link_to "Show this mod pack content", mod_pack_content %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New mod pack content", new_mod_pack_content_path %>

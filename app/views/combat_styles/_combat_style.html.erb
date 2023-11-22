@@ -1,0 +1,22 @@
+<div id="<%= dom_id combat_style %>" class="card">
+  <div class="card-header">
+    <h2>
+      <%= combat_style.name %>
+      <% if show %>
+        <%= link_to "Show", combat_style, class: "btn btn-primary btn-sm" %>
+      <% end %>
+    </h2>
+  </div>
+
+  <div class="card-body">
+    <%= combat_style.description %>
+
+    <div class="progress">
+      <div class="progress-bar bg-danger" style="width:<%= combat_style.ut_value_to_percentage %>%"></div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <%= combat_style.ut_value %>
+  </div>
+</div>

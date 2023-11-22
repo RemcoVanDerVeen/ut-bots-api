@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @team_bot %>
+
+<div>
+  <%= link_to "Edit this team bot", edit_team_bot_path(@team_bot) %> |
+  <%= link_to "Back to team bots", team_bots_path %>
+
+  <%= button_to "Destroy this team bot", @team_bot, method: :delete %>
+</div>

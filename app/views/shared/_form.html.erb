@@ -1,0 +1,14 @@
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+<div class="form-inputs">
+  <%= f.input :name, label: 'Name' %>
+  <%= f.input :description, label: 'Description' %>
+  <%= f.input :vanilla, label: 'Comes with Vanilla UT' %>
+  <%= f.input :ut_value, label: 'Unreal Tournament Botlist Value' %>
+
+  <%= yield %>
+
+  <%= f.button :submit, class: "btn-primary" %>
+  <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+</div>

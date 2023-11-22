@@ -1,0 +1,6 @@
+<%= simple_form_for(@voice_pack) do |f| %>
+  <%= render "shared/form", f: f do %>
+    <%= f.input :has_all_sounds, label: 'Has soundbytes for all taunts, orders, etc.' %>
+    <%= f.association :player_models, as: :check_boxes, checked: @voice_pack.player_model_ids %>
+  <% end %>
+<% end %>

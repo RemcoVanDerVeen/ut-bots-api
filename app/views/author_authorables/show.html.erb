@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @authorable %>
+
+<div>
+  <%= link_to "Edit this authorable", edit_authorable_path(@authorable) %> |
+  <%= link_to "Back to authorables", authorables_path %>
+
+  <%= button_to "Destroy this authorable", @authorable, method: :delete %>
+</div>

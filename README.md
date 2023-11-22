@@ -7,18 +7,15 @@ Things you may want to cover:
 
 * Ruby version
 
+3.1.4
+
 * System dependencies
 
-* Configuration
+# how to build:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+docker build
+docker-compose -rm api bundle install
+docker-compose -rm api npm install npx
+docker-compose -rm api rails css:install:bootstrap
+```

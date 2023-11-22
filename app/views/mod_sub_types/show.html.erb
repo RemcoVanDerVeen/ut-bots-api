@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @mod_sub_type %>
+
+<div>
+  <%= link_to "Edit this mod sub type", edit_mod_sub_type_path(@mod_sub_type) %> |
+  <%= link_to "Back to mod sub types", mod_sub_types_path %>
+
+  <%= button_to "Destroy this mod sub type", @mod_sub_type, method: :delete %>
+</div>

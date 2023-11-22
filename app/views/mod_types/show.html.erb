@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @mod_type %>
+
+<div>
+  <%= link_to "Edit this mod type", edit_mod_type_path(@mod_type) %> |
+  <%= link_to "Back to mod types", mod_types_path %>
+
+  <%= button_to "Destroy this mod type", @mod_type, method: :delete %>
+</div>

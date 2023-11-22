@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @mod_pack_content %>
+
+<div>
+  <%= link_to "Edit this mod pack content", edit_mod_pack_content_path(@mod_pack_content) %> |
+  <%= link_to "Back to mod pack contents", mod_pack_contents_path %>
+
+  <%= button_to "Destroy this mod pack content", @mod_pack_content, method: :delete %>
+</div>

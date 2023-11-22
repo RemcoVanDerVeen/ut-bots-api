@@ -1,0 +1,17 @@
+<%= form_with(model: xbots_configuration) do |form| %>
+  <% if xbots_configuration.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(xbots_configuration.errors.count, "error") %> prohibited this xbots_configuration from being saved:</h2>
+
+      <ul>
+        <% xbots_configuration.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <p style="color: green"><%= notice %></p>
+
+  <%= link_to "Return to index", player_models_path, class: "btn btn-primary btn-sm" %>
+  <br/>
+  <br/>
+
+  <%= render @player_model %>
+
+  <br/>
+  <%= link_to "Edit", edit_player_model_path(@player_model), class: "btn btn-primary btn-sm" %>
+  <%= button_to "Destroy", @player_model, method: :delete, class: "btn btn-outline-danger btn-sm" %>
+</div>

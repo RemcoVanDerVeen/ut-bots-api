@@ -1,0 +1,18 @@
+<ul class="list-group">
+  <% collection.each do |record| %>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-sm-4">
+          <%= record.name %>
+
+          <% if record.respond_to?(:vanilla) && record.vanilla %>
+            <span class="badge bg-warning">Vanilla</span>
+          <% end %>
+        </div>
+        <div class="col-sm-2">
+          <%= link_to "Show", record %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>

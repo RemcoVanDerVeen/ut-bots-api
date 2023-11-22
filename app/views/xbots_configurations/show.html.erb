@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @xbots_configuration %>
+
+<div>
+  <%= link_to "Edit this xbots configuration", edit_xbots_configuration_path(@xbots_configuration) %> |
+  <%= link_to "Back to xbots configurations", xbots_configurations_path %>
+
+  <%= button_to "Destroy this xbots configuration", @xbots_configuration, method: :delete %>
+</div>

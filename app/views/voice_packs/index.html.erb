@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <p style="color: green"><%= notice %></p>
+
+  <h1>Voice packs</h1>
+
+  <%= link_to "New voice pack", new_voice_pack_path, class: "btn btn-primary" %>
+  <br/>
+  <br/>
+
+  <div id="voice_packs">
+    <%= render "shared/index", collection: @voice_packs %>
+  </div>
+</div>

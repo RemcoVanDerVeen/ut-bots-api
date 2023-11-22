@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @mutator %>
+
+<div>
+  <%= link_to "Edit this mutator", edit_mutator_path(@mutator) %> |
+  <%= link_to "Back to mutators", mutators_path %>
+
+  <%= button_to "Destroy this mutator", @mutator, method: :delete %>
+</div>

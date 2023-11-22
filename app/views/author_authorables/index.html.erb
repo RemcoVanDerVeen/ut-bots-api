@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Authorables</h1>
+
+<div id="authorables">
+  <% @authorables.each do |authorable| %>
+    <%= render authorable %>
+    <p>
+      <%= link_to "Show this authorable", authorable %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New authorable", new_authorable_path %>

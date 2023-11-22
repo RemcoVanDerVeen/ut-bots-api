@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <p style="color: green"><%= notice %></p>
+
+  <%= link_to "Return to index", weapons_path, class: "btn btn-primary btn-sm" %>
+  <br/>
+  <br/>
+
+  <%= render "shared/record", record: @weapon %>
+
+  <br/>
+  <%= link_to "Edit", edit_weapon_path(@weapon), class: "btn btn-primary btn-sm" %>
+  <%= button_to "Destroy", @weapon, method: :delete, class: "btn btn-outline-danger btn-sm" %>
+</div>

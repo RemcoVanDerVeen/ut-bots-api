@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Xbots configurations</h1>
+
+<div id="xbots_configurations">
+  <% @xbots_configurations.each do |xbots_configuration| %>
+    <%= render xbots_configuration %>
+    <p>
+      <%= link_to "Show this xbots configuration", xbots_configuration %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New xbots configuration", new_xbots_configuration_path %>

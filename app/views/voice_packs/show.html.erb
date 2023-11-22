@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <p style="color: green"><%= notice %></p>
+
+  <%= link_to "Return to index", voice_packs_path, class: "btn btn-primary btn-sm" %>
+  <br/>
+  <br/>
+
+  <%= render @voice_pack %>
+
+  <br/>
+  <%= link_to "Edit", edit_voice_pack_path(@voice_pack), class: "btn btn-primary btn-sm" %>
+  <%= button_to "Destroy", @voice_pack, method: :delete, class: "btn btn-outline-danger btn-sm" %>
+</div>

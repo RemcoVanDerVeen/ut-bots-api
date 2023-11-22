@@ -1,0 +1,21 @@
+<div id="<%= dom_id weapon %>" class="card">
+  <div class="card-header">
+    <h2>
+      <%= weapon.name %>
+
+      <% if weapon.vanilla %>
+        <span class="badge bg-warning">Vanilla</span>
+      <% else %>
+        <span class="badge bg-info">Mod</span>
+      <% end %>
+    </h2>
+  </div>
+
+  <div class="card-body">
+    <%= weapon.description %>
+  </div>
+
+  <div class="card-footer">
+    <%= weapon.ut_value %>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Mutators</h1>
+
+<div id="mutators">
+  <% @mutators.each do |mutator| %>
+    <%= render mutator %>
+    <p>
+      <%= link_to "Show this mutator", mutator %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New mutator", new_mutator_path %>

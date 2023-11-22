@@ -1,0 +1,2 @@
+module TeamBotsHelper
+end

@@ -1,4 +1,4 @@
-FROM ruby:3.1-alpine3.16
+FROM ruby:3.1.4-alpine3.16
 
 ENV APP_ROOT=/app \
     BUNDLE_BIN=/bundle/bin \
@@ -20,14 +20,14 @@ RUN apk add --no-cache --update build-base \
                                 pkgconfig \
                                 cmake \
                                 curl \
-                                gcompat
+                                gcompat \
+                                nodejs npm
 
 RUN gem install bundler:2.3.22
 
 COPY ./Gemfile* $APP_ROOT/
 
-RUN bundle install -j 5; \
-    bundle clean --force
+RUN bundle install -j 5
 
 COPY . $APP_ROOT/
 

@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <p style="color: green"><%= notice %></p>
+
+  <h1>Combat styles</h1>
+
+  <%= link_to "New combat style", new_combat_style_path, class: "btn btn-primary" %>
+  <br/>
+  <br/>
+
+  <div id="combat_styles">
+    <% @combat_styles.each do |combat_style| %>
+      <%= render combat_style, show: true %>
+    <% end %>
+  </div>
+
+  <%= link_to "New combat style", new_combat_style_path %>
+</div>

@@ -1,0 +1,25 @@
+<div id="<%= dom_id @player_model %>" class="card">
+  <div class="card-header">
+    <h2>
+      <%= @player_model.name %>
+
+      <% if @player_model.vanilla %>
+        <span class="badge bg-warning">Vanilla</span>
+      <% else %>
+        <span class="badge bg-info">Mod</span>
+      <% end %>
+    </h2>
+  </div>
+
+  <div class="card-body">
+    <%= @player_model.description %>
+    <hr/>
+
+    <h3>Associated voice packs</h3>
+    <%= render "shared/index", collection: @player_model.voice_packs %>
+  </div>
+
+  <div class="card-footer">
+    <%= @player_model.ut_value %>
+  </div>
+</div>

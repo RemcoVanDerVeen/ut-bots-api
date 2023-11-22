@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts "env: #{ENV["RAILS_ENV"]}"
+
+load "/app/db/seeds/development/combat_styles.rb"
+load "/app/db/seeds/development/player_models.rb"
+load "/app/db/seeds/development/voice_packs.rb"
+load "/app/db/seeds/development/weapons.rb"

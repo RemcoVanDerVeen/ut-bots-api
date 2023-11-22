@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Botlist bots</h1>
+
+<div id="botlist_bots">
+  <% @botlist_bots.each do |botlist_bot| %>
+    <%= render botlist_bot %>
+    <p>
+      <%= link_to "Show this botlist bot", botlist_bot %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New botlist bot", new_botlist_bot_path %>
