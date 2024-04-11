@@ -68,20 +68,20 @@ services:
   #     - db
   #     - redis
 
-  test:
-    <<: *build
-    environment:
-      <<: *env
-      DATABASE_NAME: ut-bots-api-test-db
-      RAILS_ENV: test
-      RAILS_LOG_TO_STDOUT:
-    depends_on:
-      - db
-      # - redis
-    volumes:
-      - .:/app:delegated
-      - ./tmp/rspec:/rspec:cached
-      - bundle:/bundle:delegated
+  # test:
+  #   <<: *build
+  #   environment:
+  #     <<: *env
+  #     DATABASE_NAME: ut-bots-api-test-db
+  #     RAILS_ENV: test
+  #     RAILS_LOG_TO_STDOUT:
+  #   depends_on:
+  #     - db
+  #     # - redis
+  #   volumes:
+  #     - .:/app:delegated
+  #     - ./tmp/rspec:/rspec:cached
+  #     - bundle:/bundle:delegated
 
   # rubocop:
   #   <<: *build

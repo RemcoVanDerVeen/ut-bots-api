@@ -7,15 +7,16 @@ Things you may want to cover:
 
 * Ruby version
 
-3.1.4
+3.3.0
 
 * System dependencies
 
 # how to build:
 
 ```
-docker build
-docker-compose -rm api bundle install
-docker-compose -rm api npm install npx
-docker-compose -rm api rails css:install:bootstrap
+docker compose build --no-cache
+docker compose run --rm api bundle install
+docker compose run --rm api npm install npx
+docker compose run --rm api rails css:install:bootstrap
+docker compose run --rm api bundle exec rails db:setup
 ```

@@ -1,4 +1,4 @@
-FROM ruby:3.1.4-alpine3.16
+FROM ruby:3.3.0-alpine3.19
 
 ENV APP_ROOT=/app \
     BUNDLE_BIN=/bundle/bin \
