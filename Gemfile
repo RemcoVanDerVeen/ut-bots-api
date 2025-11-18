@@ -6,8 +6,8 @@ ruby "3.4.7"
 gem "rails", "~> 8.1"
 
 # Core dependencies
-gem "pg", "~> 1.1"
-gem "puma", ">= 6.4"
+gem "pg", "~> 1.6.2"
+gem "puma", "~> 7.1"
 gem "propshaft"  # Modern asset pipeline
 gem "importmap-rails"
 gem "turbo-rails"
@@ -19,18 +19,19 @@ gem "bootsnap", require: false
 # Frontend
 gem "simple_form"
 
-# Code quality
-gem "rubocop-rails-omakase", require: false
-
-group :development, :test do
-  gem "debug", platforms: %i[mri windows x64_mingw]
-end
-
 group :development do
   gem "web-console"
-end
+  gem "debug"
 
-group :test do
-  gem "capybara"
-  gem "selenium-webdriver"
+  # gem "rubocop", require: false
+  # gem "rubocop-rails-omakase", require: false
+  # gem "rubocop-performance", require: false
+  # gem "rubocop-minitest", require: false
+  # gem "rubocop-factory_bot", require: false
+
+  gem "factory_bot_rails"
+  gem "faker"
+
+  group :test do
+  end
 end
