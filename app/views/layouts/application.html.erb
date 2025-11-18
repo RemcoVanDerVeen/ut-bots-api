@@ -8,19 +8,18 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
     <%= render partial: "layouts/topbar" %>
 
-    <div class="row">
-      <div class="col-sm-2">
+    <div class="main-container">
+      <aside class="sidebar">
         <%= render partial: "layouts/sidebar" %>
-      </div>
-      <div class="col-sm-8">
+      </aside>
+      <main class="main-content">
         <%= yield %>
-      </div>
+      </main>
     </div>
   </body>
 </html>
