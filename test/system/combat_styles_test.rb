@@ -7,6 +7,7 @@ class CombatStylesTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit combat_styles_url
+
     assert_selector "h1", text: "Combat styles"
   end
 

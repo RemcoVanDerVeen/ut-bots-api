@@ -3,7 +3,7 @@ class Colour < ApplicationRecord
   validate :validate_at_least_one_identifier
 
   def validate_at_least_one_identifier
-    if [name, hex, rgb].none?
+    if [ name, hex, rgb ].none?
       errors.add(self, "needs at least one identifier.")
     end
   end

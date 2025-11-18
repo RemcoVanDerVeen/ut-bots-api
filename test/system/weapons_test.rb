@@ -7,6 +7,7 @@ class WeaponsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit weapons_url
+
     assert_selector "h1", text: "Weapons"
   end
 

@@ -7,11 +7,13 @@ class MutatorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get mutators_url
+
     assert_response :success
   end
 
   test "should get new" do
     get new_mutator_url
+
     assert_response :success
   end
 
@@ -25,16 +27,19 @@ class MutatorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show mutator" do
     get mutator_url(@mutator)
+
     assert_response :success
   end
 
   test "should get edit" do
     get edit_mutator_url(@mutator)
+
     assert_response :success
   end
 
   test "should update mutator" do
     patch mutator_url(@mutator), params: { mutator: { description: @mutator.description, name: @mutator.name } }
+
     assert_redirected_to mutator_url(@mutator)
   end
 

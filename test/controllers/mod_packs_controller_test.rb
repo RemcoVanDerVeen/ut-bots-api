@@ -7,11 +7,13 @@ class ModPacksControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get mod_packs_url
+
     assert_response :success
   end
 
   test "should get new" do
     get new_mod_pack_url
+
     assert_response :success
   end
 
@@ -25,16 +27,19 @@ class ModPacksControllerTest < ActionDispatch::IntegrationTest
 
   test "should show mod_pack" do
     get mod_pack_url(@mod_pack)
+
     assert_response :success
   end
 
   test "should get edit" do
     get edit_mod_pack_url(@mod_pack)
+
     assert_response :success
   end
 
   test "should update mod_pack" do
     patch mod_pack_url(@mod_pack), params: { mod_pack: { name: @mod_pack.name } }
+
     assert_redirected_to mod_pack_url(@mod_pack)
   end
 

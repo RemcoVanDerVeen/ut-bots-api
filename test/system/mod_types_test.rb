@@ -7,6 +7,7 @@ class ModTypesTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit mod_types_url
+
     assert_selector "h1", text: "Mod types"
   end
 

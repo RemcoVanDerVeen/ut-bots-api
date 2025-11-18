@@ -7,6 +7,7 @@ class BotlistBotsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit botlist_bots_url
+
     assert_selector "h1", text: "Botlist bots"
   end
 

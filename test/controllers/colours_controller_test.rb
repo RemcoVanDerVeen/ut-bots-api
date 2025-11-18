@@ -7,11 +7,13 @@ class ColoursControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get colours_url
+
     assert_response :success
   end
 
   test "should get new" do
     get new_colour_url
+
     assert_response :success
   end
 
@@ -25,16 +27,19 @@ class ColoursControllerTest < ActionDispatch::IntegrationTest
 
   test "should show colour" do
     get colour_url(@colour)
+
     assert_response :success
   end
 
   test "should get edit" do
     get edit_colour_url(@colour)
+
     assert_response :success
   end
 
   test "should update colour" do
     patch colour_url(@colour), params: { colour: { hex: @colour.hex, name: @colour.name, rgb: @colour.rgb } }
+
     assert_redirected_to colour_url(@colour)
   end
 

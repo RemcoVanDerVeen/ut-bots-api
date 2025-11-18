@@ -7,11 +7,13 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get authors_url
+
     assert_response :success
   end
 
   test "should get new" do
     get new_author_url
+
     assert_response :success
   end
 
@@ -25,16 +27,19 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show author" do
     get author_url(@author)
+
     assert_response :success
   end
 
   test "should get edit" do
     get edit_author_url(@author)
+
     assert_response :success
   end
 
   test "should update author" do
     patch author_url(@author), params: { author: { description: @author.description, name: @author.name } }
+
     assert_redirected_to author_url(@author)
   end
 

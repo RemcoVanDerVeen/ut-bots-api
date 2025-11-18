@@ -7,6 +7,7 @@ class MapsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit maps_url
+
     assert_selector "h1", text: "Maps"
   end
 

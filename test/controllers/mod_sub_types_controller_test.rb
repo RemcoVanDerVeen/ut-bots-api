@@ -7,11 +7,13 @@ class ModSubTypesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get mod_sub_types_url
+
     assert_response :success
   end
 
   test "should get new" do
     get new_mod_sub_type_url
+
     assert_response :success
   end
 
@@ -25,16 +27,19 @@ class ModSubTypesControllerTest < ActionDispatch::IntegrationTest
 
   test "should show mod_sub_type" do
     get mod_sub_type_url(@mod_sub_type)
+
     assert_response :success
   end
 
   test "should get edit" do
     get edit_mod_sub_type_url(@mod_sub_type)
+
     assert_response :success
   end
 
   test "should update mod_sub_type" do
     patch mod_sub_type_url(@mod_sub_type), params: { mod_sub_type: { name: @mod_sub_type.name } }
+
     assert_redirected_to mod_sub_type_url(@mod_sub_type)
   end
 

@@ -7,6 +7,7 @@ class ModSubTypesTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit mod_sub_types_url
+
     assert_selector "h1", text: "Mod sub types"
   end
 
