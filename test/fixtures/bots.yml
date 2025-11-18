@@ -1,7 +1,29 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: TestBot1
+  has_jumpy_behaviour: false
+  skill_adjust: 0
+  bot_accuracy: 0
+  alertness: 0
+  camping: 0
+  strafing_ability: 0
+  combat_style: one
+  model: one
+  skin: one
+  face: one
+  voice_pack: one
 
 two:
-  name: MyString
+  name: TestBot2
+  has_jumpy_behaviour: true
+  skill_adjust: 1
+  bot_accuracy: 0.5
+  alertness: 0.5
+  camping: 0.5
+  strafing_ability: 0.5
+  combat_style: two
+  model: two
+  skin: two
+  face: two
+  voice_pack: two

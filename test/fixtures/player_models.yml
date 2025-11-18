@@ -1,9 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyString
+  name: Male Soldier
+  description: Standard male soldier
+  ut_value: MaleSoldier
+  vanilla: true
 
 two:
-  name: MyString
-  description: MyString
+  name: Female Soldier
+  description: Standard female soldier
+  ut_value: FemaleSoldier
+  vanilla: true

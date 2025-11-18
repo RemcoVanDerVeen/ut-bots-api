@@ -1,7 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  value: 1
+  value: 5
+  rateable: one (Bot)
 
 two:
-  value: 1
+  value: 8
+  rateable: two (Bot)
