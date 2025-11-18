@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.3.10"
+ruby "3.4.7"
 
 # Rails 8 with modern defaults
 gem "rails", "~> 8.0.0"

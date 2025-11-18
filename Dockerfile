@@ -1,4 +1,4 @@
-FROM ruby:3.3.10-alpine
+FROM ruby:3.4.7-alpine
 
 ENV APP_ROOT=/app \
     BUNDLE_PATH=/bundle \
