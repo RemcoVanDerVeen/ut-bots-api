@@ -2,7 +2,7 @@ require "test_helper"
 
 class ModPacksControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @mod_pack = mod_packs(:one)
+    @mod_pack = create(:mod_pack, :without_sub_type)
   end
 
   test "should get index" do

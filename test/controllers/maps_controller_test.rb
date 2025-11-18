@@ -2,7 +2,7 @@ require "test_helper"
 
 class MapsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @map = maps(:one)
+    @map = create(:map)
   end
 
   test "should get index" do

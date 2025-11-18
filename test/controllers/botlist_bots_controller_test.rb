@@ -2,7 +2,7 @@ require "test_helper"
 
 class BotlistBotsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @botlist_bot = botlist_bots(:one)
+    @botlist_bot = create(:botlist_bot)
   end
 
   test "should get index" do

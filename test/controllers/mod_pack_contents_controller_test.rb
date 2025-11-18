@@ -2,7 +2,7 @@ require "test_helper"
 
 class ModPackContentsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @mod_pack_content = mod_pack_contents(:one)
+    @mod_pack_content = create(:mod_pack_content)
   end
 
   test "should get index" do

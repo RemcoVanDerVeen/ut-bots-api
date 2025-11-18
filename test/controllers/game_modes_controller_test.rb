@@ -2,7 +2,7 @@ require "test_helper"
 
 class GameModesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @game_mode = game_modes(:one)
+    @game_mode = create(:game_mode)
   end
 
   test "should get index" do

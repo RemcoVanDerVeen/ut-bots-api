@@ -2,7 +2,7 @@ require "test_helper"
 
 class XbotsConfigurationBotlistsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @xbots_configuration_botlist = xbots_configuration_botlists(:one)
+    @xbots_configuration_botlist = create(:xbots_configuration_botlist)
   end
 
   test "should get index" do

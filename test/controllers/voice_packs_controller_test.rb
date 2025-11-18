@@ -2,7 +2,7 @@ require "test_helper"
 
 class VoicePacksControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @voice_pack = voice_packs(:one)
+    @voice_pack = create(:voice_pack)
   end
 
   test "should get index" do

@@ -3,17 +3,20 @@ require "test_helper"
 class PlayerModelTest < ActiveSupport::TestCase
   test "should be valid with valid attributes" do
     player_model = PlayerModel.new(name: "Male Soldier", ut_value: "MaleSoldier")
-    assert player_model.valid?
+
+    assert_predicate player_model, :valid?
   end
 
   test "should require name" do
     player_model = PlayerModel.new(name: nil, ut_value: "MaleSoldier")
+
     assert_not player_model.valid?
     assert_includes player_model.errors[:name], "can't be blank"
   end
 
   test "should require ut_value" do
     player_model = PlayerModel.new(name: "Male Soldier", ut_value: nil)
+
     assert_not player_model.valid?
     assert_includes player_model.errors[:ut_value], "can't be blank"
   end

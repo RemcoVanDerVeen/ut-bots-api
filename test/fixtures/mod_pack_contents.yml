@@ -1,9 +1,0 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  mod_pack: one
-  content: one (Weapon)
-
-two:
-  mod_pack: two
-  content: two (Map)

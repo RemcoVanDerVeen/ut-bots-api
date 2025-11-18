@@ -2,7 +2,7 @@ require "test_helper"
 
 class CombatStylesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @combat_style = combat_styles(:one)
+    @combat_style = create(:combat_style)
   end
 
   test "should get index" do

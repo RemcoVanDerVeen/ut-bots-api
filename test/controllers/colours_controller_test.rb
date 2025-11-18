@@ -2,7 +2,7 @@ require "test_helper"
 
 class ColoursControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @colour = colours(:one)
+    @colour = create(:colour)
   end
 
   test "should get index" do

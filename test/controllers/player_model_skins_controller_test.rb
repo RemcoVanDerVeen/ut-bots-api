@@ -2,7 +2,7 @@ require "test_helper"
 
 class PlayerModelSkinsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @player_model_skin = player_model_skins(:one)
+    @player_model_skin = create(:player_model_skin)
   end
 
   test "should get index" do

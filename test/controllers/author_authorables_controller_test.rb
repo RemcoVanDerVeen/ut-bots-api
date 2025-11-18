@@ -2,7 +2,7 @@ require "test_helper"
 
 class AuthorablesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @authorable = authorables(:one)
+    @author_authorable = create(:author_authorable)
   end
 
   test "should get index" do
