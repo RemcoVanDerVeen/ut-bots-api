@@ -7,17 +7,19 @@ class AuthorablesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get authorables_url
+
     assert_response :success
   end
 
   test "should get new" do
     get new_authorable_url
+
     assert_response :success
   end
 
   test "should create authorable" do
     assert_difference("Authorable.count") do
-      post authorables_url, params: { authorable: {  } }
+      post authorables_url, params: { authorable: {} }
     end
 
     assert_redirected_to authorable_url(Authorable.last)
@@ -25,16 +27,19 @@ class AuthorablesControllerTest < ActionDispatch::IntegrationTest
 
   test "should show authorable" do
     get authorable_url(@authorable)
+
     assert_response :success
   end
 
   test "should get edit" do
     get edit_authorable_url(@authorable)
+
     assert_response :success
   end
 
   test "should update authorable" do
-    patch authorable_url(@authorable), params: { authorable: {  } }
+    patch authorable_url(@authorable), params: { authorable: {} }
+
     assert_redirected_to authorable_url(@authorable)
   end
 

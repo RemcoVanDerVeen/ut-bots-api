@@ -5,8 +5,8 @@ VANILLA_VOICE_PACKS = [
   { name: 'Male Two', description: '', ut_value: 'BotPack.VoiceMaleTwo', has_all_sounds: true, vanilla: true, player_models: PlayerModel::MALE_MODELS },
   { name: 'Nali', description: '', ut_value: 'MultiMesh.NaliVoice', has_all_sounds: true, vanilla: true, player_models: PlayerModel::MALE_MODELS },
   { name: 'Nali WarCow', description: '', ut_value: 'MultiMesh.CowVoice', has_all_sounds: true, vanilla: true, player_models: PlayerModel::MALE_MODELS },
-  { name: 'Robot', description: '', ut_value: 'Botpack.VoiceBotBoss', has_all_sounds: true, vanilla: true, player_models: [*PlayerModel::MALE_MODELS, *PlayerModel::ROBOT_MODELS] },
-  { name: 'Skaarj Hybrid', description: '', ut_value: 'MultiMesh.SkaarjVoice', has_all_sounds: true, vanilla: true, player_models: PlayerModel::MALE_MODELS },
+  { name: 'Robot', description: '', ut_value: 'Botpack.VoiceBotBoss', has_all_sounds: true, vanilla: true, player_models: [ *PlayerModel::MALE_MODELS, *PlayerModel::ROBOT_MODELS ] },
+  { name: 'Skaarj Hybrid', description: '', ut_value: 'MultiMesh.SkaarjVoice', has_all_sounds: true, vanilla: true, player_models: PlayerModel::MALE_MODELS }
 ].freeze
 
 CUSTOM_VOICE_PACKS = [
@@ -20,7 +20,7 @@ CUSTOM_VOICE_PACKS = [
   { name: 'Duke Nukem', description: '', ut_value: 'DukeNukemVoice.DukeNukemVoice', has_all_sounds: true, player_models: PlayerModel::MALE_MODELS },
   { name: 'Elexis', description: '', ut_value: 'ElexisPackage.ElexisTaunts', player_models: PlayerModel::FEMALE_MODELS },
   { name: 'Female Robot', description: '', ut_value: 'FemaleBossVoice.VoiceFemaleBoss', has_all_sounds: true, player_models: PlayerModel::FEMALE_MODELS },
-  { name: 'Godvoice', description: '', ut_value: 'GodPackage.VoiceGod', player_models: [*PlayerModel::FEMALE_MODELS, *PlayerModel::MALE_MODELS, *PlayerModel::ROBOT_MODELS] },
+  { name: 'Godvoice', description: '', ut_value: 'GodPackage.VoiceGod', player_models: [ *PlayerModel::FEMALE_MODELS, *PlayerModel::MALE_MODELS, *PlayerModel::ROBOT_MODELS ] },
   { name: 'IronGuard Male (UT3)', description: '', ut_value: 'IGMale.IGMale', has_all_sounds: true, player_models: PlayerModel::MALE_MODELS },
   { name: 'J.C. (Sin)', description: '', ut_value: 'Jctaunts.Jctaunts', player_models: PlayerModel::MALE_MODELS },
   { name: 'Jester (UT3)', description: '', ut_value: 'Jester.Jester', has_all_sounds: true, player_models: PlayerModel::FEMALE_MODELS },
@@ -41,13 +41,13 @@ CUSTOM_VOICE_PACKS = [
   { name: 'UT2K4 - Juggernaut Male', description: '', ut_value: 'ut2004charactersv2.juggmalevoice', has_all_sounds: true, player_models: PlayerModel::MALE_MODELS },
   { name: 'UT2K4 - Nightmare Female', description: '', ut_value: 'ut2004charactersv2.nightfemalevoice', has_all_sounds: true, player_models: PlayerModel::FEMALE_MODELS },
   { name: 'UT2K4 - Nightmare Male', description: '', ut_value: 'ut2004charactersv2.nightmalevoice', has_all_sounds: true, player_models: PlayerModel::MALE_MODELS },
-  { name: 'UT2k4 Robot', description: '', ut_value: 'UT2k4Robot.UT2k4Robot', has_all_sounds: true, player_models: [*PlayerModel::MALE_MODELS, *PlayerModel::ROBOT_MODELS] },
-  { name: 'Worf', description: '', ut_value: 'worfpackage.voiceworf', player_models: PlayerModel::MALE_MODELS },
+  { name: 'UT2k4 Robot', description: '', ut_value: 'UT2k4Robot.UT2k4Robot', has_all_sounds: true, player_models: [ *PlayerModel::MALE_MODELS, *PlayerModel::ROBOT_MODELS ] },
+  { name: 'Worf', description: '', ut_value: 'worfpackage.voiceworf', player_models: PlayerModel::MALE_MODELS }
 ]
 
 puts "Creating voice packs..."
 
-[*VANILLA_VOICE_PACKS, *CUSTOM_VOICE_PACKS].each do |voice_pack_attrs|
+[ *VANILLA_VOICE_PACKS, *CUSTOM_VOICE_PACKS ].each do |voice_pack_attrs|
   VoicePack.where(**voice_pack_attrs.except(:player_models)).first_or_create! do |voice_pack|
     puts "***#{voice_pack.name} added!***"
 

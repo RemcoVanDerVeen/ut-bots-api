@@ -7,11 +7,13 @@ class BotsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get bots_url
+
     assert_response :success
   end
 
   test "should get new" do
     get new_bot_url
+
     assert_response :success
   end
 
@@ -25,16 +27,19 @@ class BotsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show bot" do
     get bot_url(@bot)
+
     assert_response :success
   end
 
   test "should get edit" do
     get edit_bot_url(@bot)
+
     assert_response :success
   end
 
   test "should update bot" do
     patch bot_url(@bot), params: { bot: { name: @bot.name } }
+
     assert_redirected_to bot_url(@bot)
   end
 

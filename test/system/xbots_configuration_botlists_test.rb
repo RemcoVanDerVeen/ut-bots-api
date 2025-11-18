@@ -7,6 +7,7 @@ class XbotsConfigurationBotlistsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit xbots_configuration_botlists_url
+
     assert_selector "h1", text: "Xbots configuration botlists"
   end
 

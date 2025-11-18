@@ -7,6 +7,7 @@ class AuthorsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit authors_url
+
     assert_selector "h1", text: "Authors"
   end
 

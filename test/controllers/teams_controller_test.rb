@@ -7,11 +7,13 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get teams_url
+
     assert_response :success
   end
 
   test "should get new" do
     get new_team_url
+
     assert_response :success
   end
 
@@ -25,16 +27,19 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show team" do
     get team_url(@team)
+
     assert_response :success
   end
 
   test "should get edit" do
     get edit_team_url(@team)
+
     assert_response :success
   end
 
   test "should update team" do
     patch team_url(@team), params: { team: { description: @team.description, name: @team.name } }
+
     assert_redirected_to team_url(@team)
   end
 

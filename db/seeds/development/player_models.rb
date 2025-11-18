@@ -8,7 +8,7 @@ VANILLA_MODELS = [
   { name: 'Nali WarCow', description: 'Moo!', ut_value: 'cowfix.tcowbotfixed', vanilla: true },
   { name: 'Skaarj Hybrid', description: 'A skaarj hybrid model', ut_value: 'MultiMesh.TSkaarjBot', vanilla: true },
   { name: 'Warboss', description: 'Warboss model from the Bonus Pack 4', ut_value: 'SkeletalCharsFix313.WarBossBotFix313', vanilla: true },
-  { name: 'Xan Mark II', description: 'Xan Mark II model from the Bonus Pack 4', ut_value: 'SkeletalCharsFix313.XanMk2BotFix313', vanilla: true },
+  { name: 'Xan Mark II', description: 'Xan Mark II model from the Bonus Pack 4', ut_value: 'SkeletalCharsFix313.XanMk2BotFix313', vanilla: true }
 ].freeze
 
 CUSTOM_MODELS = [
@@ -18,12 +18,12 @@ CUSTOM_MODELS = [
   { name: 'Gunther Hermann', description: 'Ported model from Deus Ex', ut_value: 'GuntherHermann.GuntherHermannbot' },
   { name: 'JC Denton', description: 'Ported model from Deus Ex', ut_value: 'JCDenton.JCDentonBot' },
   { name: 'Mech Trooper', description: 'Ported model from Deus Ex', ut_value: 'MechTrooper.MechTrooperbot' },
-  { name: 'War Machine', description: 'Ported model from the PS2 version of the game', ut_value: 'PS2WarMachine.PS2WarMachine' },
+  { name: 'War Machine', description: 'Ported model from the PS2 version of the game', ut_value: 'PS2WarMachine.PS2WarMachine' }
 ]
 
 puts "Creating player models..."
 
-[*VANILLA_MODELS, *CUSTOM_MODELS].each do |model_attrs|
+[ *VANILLA_MODELS, *CUSTOM_MODELS ].each do |model_attrs|
   PlayerModel.where(**model_attrs).first_or_create! do |model|
     puts "***#{model.name} added!***"
   end

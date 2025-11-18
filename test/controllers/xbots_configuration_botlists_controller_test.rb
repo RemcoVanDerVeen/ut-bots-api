@@ -7,17 +7,19 @@ class XbotsConfigurationBotlistsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get xbots_configuration_botlists_url
+
     assert_response :success
   end
 
   test "should get new" do
     get new_xbots_configuration_botlist_url
+
     assert_response :success
   end
 
   test "should create xbots_configuration_botlist" do
     assert_difference("XbotsConfigurationBotlist.count") do
-      post xbots_configuration_botlists_url, params: { xbots_configuration_botlist: {  } }
+      post xbots_configuration_botlists_url, params: { xbots_configuration_botlist: {} }
     end
 
     assert_redirected_to xbots_configuration_botlist_url(XbotsConfigurationBotlist.last)
@@ -25,16 +27,19 @@ class XbotsConfigurationBotlistsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show xbots_configuration_botlist" do
     get xbots_configuration_botlist_url(@xbots_configuration_botlist)
+
     assert_response :success
   end
 
   test "should get edit" do
     get edit_xbots_configuration_botlist_url(@xbots_configuration_botlist)
+
     assert_response :success
   end
 
   test "should update xbots_configuration_botlist" do
-    patch xbots_configuration_botlist_url(@xbots_configuration_botlist), params: { xbots_configuration_botlist: {  } }
+    patch xbots_configuration_botlist_url(@xbots_configuration_botlist), params: { xbots_configuration_botlist: {} }
+
     assert_redirected_to xbots_configuration_botlist_url(@xbots_configuration_botlist)
   end
 

@@ -7,6 +7,7 @@ class MutatorsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit mutators_url
+
     assert_selector "h1", text: "Mutators"
   end
 

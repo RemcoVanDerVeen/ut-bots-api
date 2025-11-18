@@ -7,11 +7,13 @@ class WeaponsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get weapons_url
+
     assert_response :success
   end
 
   test "should get new" do
     get new_weapon_url
+
     assert_response :success
   end
 
@@ -25,16 +27,19 @@ class WeaponsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show weapon" do
     get weapon_url(@weapon)
+
     assert_response :success
   end
 
   test "should get edit" do
     get edit_weapon_url(@weapon)
+
     assert_response :success
   end
 
   test "should update weapon" do
     patch weapon_url(@weapon), params: { weapon: { description: @weapon.description, is_original: @weapon.is_original, name: @weapon.name } }
+
     assert_redirected_to weapon_url(@weapon)
   end
 

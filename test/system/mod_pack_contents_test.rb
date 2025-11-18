@@ -7,6 +7,7 @@ class ModPackContentsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit mod_pack_contents_url
+
     assert_selector "h1", text: "Mod pack contents"
   end
 

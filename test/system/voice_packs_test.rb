@@ -7,6 +7,7 @@ class VoicePacksTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit voice_packs_url
+
     assert_selector "h1", text: "Voice packs"
   end
 

@@ -7,6 +7,7 @@ class AuthorablesTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit authorables_url
+
     assert_selector "h1", text: "Authorables"
   end
 

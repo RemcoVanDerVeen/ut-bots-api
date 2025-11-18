@@ -7,6 +7,7 @@ class TeamBotsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit team_bots_url
+
     assert_selector "h1", text: "Team bots"
   end
 

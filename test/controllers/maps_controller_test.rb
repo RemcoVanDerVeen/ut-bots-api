@@ -7,11 +7,13 @@ class MapsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get maps_url
+
     assert_response :success
   end
 
   test "should get new" do
     get new_map_url
+
     assert_response :success
   end
 
@@ -25,16 +27,19 @@ class MapsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show map" do
     get map_url(@map)
+
     assert_response :success
   end
 
   test "should get edit" do
     get edit_map_url(@map)
+
     assert_response :success
   end
 
   test "should update map" do
     patch map_url(@map), params: { map: { description: @map.description, name: @map.name } }
+
     assert_redirected_to map_url(@map)
   end
 

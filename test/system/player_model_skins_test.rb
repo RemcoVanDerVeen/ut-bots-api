@@ -7,6 +7,7 @@ class PlayerModelSkinsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit player_model_skins_url
+
     assert_selector "h1", text: "Player model skins"
   end
 

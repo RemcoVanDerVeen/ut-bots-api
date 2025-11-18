@@ -7,6 +7,7 @@ class RatingsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit ratings_url
+
     assert_selector "h1", text: "Ratings"
   end
 
