@@ -5,7 +5,7 @@ A modern Rails 8 application for managing Unreal Tournament bot configurations, 
 ## Tech Stack
 
 - **Ruby** 3.4.7
-- **Rails** 8.0
+- **Rails** 8.1
 - **PostgreSQL** 17
 - **Hotwire** (Turbo + Stimulus)
 - **Propshaft** (Modern asset pipeline)

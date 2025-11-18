@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby "3.4.7"
 
 # Rails 8 with modern defaults
-gem "rails", "~> 8.0.0"
+gem "rails", "~> 8.1"
 
 # Core dependencies
 gem "pg", "~> 1.1"
