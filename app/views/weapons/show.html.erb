@@ -1,13 +1,19 @@
-<div class="container-fluid">
+<div dom_id="<%= @weapon %>" class="card">
   <p style="color: green"><%= notice %></p>
 
+  <h1><%= @weapon.name %></h1>
+  
   <%= link_to "Return to index", weapons_path, class: "btn btn-primary btn-sm" %>
-  <br/>
-  <br/>
-
-  <%= render "shared/record", record: @weapon %>
-
-  <br/>
   <%= link_to "Edit", edit_weapon_path(@weapon), class: "btn btn-primary btn-sm" %>
   <%= button_to "Destroy", @weapon, method: :delete, class: "btn btn-outline-danger btn-sm" %>
+
+
+  <h4>Description</h4>
+  <p><%= @weapon.description.presence || '-' %></p>
+
+  <h4>Vanilla?</h4>
+  <p><%= @weapon.vanilla? ? "Yes" : "No" %></p>
+
+  <h4>UT Value</h4>
+  <p class="ut-value"><%= @weapon.ut_value %></p>
 </div>

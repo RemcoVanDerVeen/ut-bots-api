@@ -1,13 +1,28 @@
-<div class="container-fluid">
-  <p style="color: green"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
-  <h1>Weapons</h1>
+<h1>Weapons</h1>
 
-  <%= link_to "New weapon", new_weapon_path, class: "btn btn-primary" %>
-  <br/>
-  <br/>
+<%= link_to "New weapon", new_weapon_path, class: "btn btn-primary" %>
 
-  <div id="weapons">
-    <%= render "shared/index", collection: @weapons %>
-  </div>
+<div id="weapons">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Vanilla</th>
+        <th>UT Value</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @weapons.each do |weapon| %>
+        <tr>
+          <td><%= weapon.name %></td>
+          <td><%= weapon.vanilla? ? "Yes" : "No" %></td>
+          <td class="ut-value"><%= weapon.ut_value %></td>
+          <td><%= link_to "Show", weapon_path(weapon), class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
