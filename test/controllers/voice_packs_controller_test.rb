@@ -2,7 +2,7 @@ require "test_helper"
 
 class VoicePacksControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @voice_pack = voice_packs(:one)
+    @voice_pack = create(:voice_pack)
   end
 
   test "should get index" do
@@ -19,7 +19,7 @@ class VoicePacksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create voice_pack" do
     assert_difference("VoicePack.count") do
-      post voice_packs_url, params: { voice_pack: {} }
+      post voice_packs_url, params: { voice_pack: { name: "Male Two", ut_value: "MaleTwo" } }
     end
 
     assert_redirected_to voice_pack_url(VoicePack.last)
@@ -38,7 +38,7 @@ class VoicePacksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update voice_pack" do
-    patch voice_pack_url(@voice_pack), params: { voice_pack: {} }
+    patch voice_pack_url(@voice_pack), params: { voice_pack: { name: @voice_pack.name } }
 
     assert_redirected_to voice_pack_url(@voice_pack)
   end

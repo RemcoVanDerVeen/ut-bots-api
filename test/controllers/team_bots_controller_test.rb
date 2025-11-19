@@ -2,7 +2,7 @@ require "test_helper"
 
 class TeamBotsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @team_bot = team_bots(:one)
+    @team_bot = create(:team_bot)
   end
 
   test "should get index" do
@@ -18,8 +18,11 @@ class TeamBotsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create team_bot" do
+    bot = create(:bot)
+    team = create(:team)
+
     assert_difference("TeamBot.count") do
-      post team_bots_url, params: { team_bot: {} }
+      post team_bots_url, params: { team_bot: { bot_id: bot.id, team_id: team.id, position: 2 } }
     end
 
     assert_redirected_to team_bot_url(TeamBot.last)
@@ -38,7 +41,7 @@ class TeamBotsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update team_bot" do
-    patch team_bot_url(@team_bot), params: { team_bot: {} }
+    patch team_bot_url(@team_bot), params: { team_bot: { position: @team_bot.position } }
 
     assert_redirected_to team_bot_url(@team_bot)
   end

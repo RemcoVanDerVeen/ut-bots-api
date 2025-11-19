@@ -2,7 +2,7 @@ require "test_helper"
 
 class ModPacksControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @mod_pack = mod_packs(:one)
+    @mod_pack = create(:mod_pack, :without_sub_type)
   end
 
   test "should get index" do
@@ -18,8 +18,10 @@ class ModPacksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create mod_pack" do
+    mod_type = create(:mod_type)
+
     assert_difference("ModPack.count") do
-      post mod_packs_url, params: { mod_pack: { name: @mod_pack.name } }
+      post mod_packs_url, params: { mod_pack: { name: "New Mod Pack", mod_type_id: mod_type.id } }
     end
 
     assert_redirected_to mod_pack_url(ModPack.last)

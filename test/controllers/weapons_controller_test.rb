@@ -2,7 +2,7 @@ require "test_helper"
 
 class WeaponsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @weapon = weapons(:one)
+    @weapon = create(:weapon)
   end
 
   test "should get index" do
@@ -19,10 +19,12 @@ class WeaponsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create weapon" do
     assert_difference("Weapon.count") do
-      post weapons_url, params: { weapon: { description: @weapon.description, is_original: @weapon.is_original, name: @weapon.name } }
+      post weapons_url, params: { weapon: { name: "Rocket Launcher", description: "Explosive weapon", ut_value: "RocketLauncher", vanilla: true } }
     end
 
-    assert_redirected_to weapon_url(Weapon.last)
+    new_weapon = Weapon.find_by(name: "Rocket Launcher")
+
+    assert_redirected_to weapon_url(new_weapon)
   end
 
   test "should show weapon" do
@@ -38,7 +40,7 @@ class WeaponsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update weapon" do
-    patch weapon_url(@weapon), params: { weapon: { description: @weapon.description, is_original: @weapon.is_original, name: @weapon.name } }
+    patch weapon_url(@weapon), params: { weapon: { description: @weapon.description, vanilla: @weapon.vanilla, name: @weapon.name } }
 
     assert_redirected_to weapon_url(@weapon)
   end

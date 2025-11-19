@@ -2,7 +2,7 @@ require "test_helper"
 
 class ModPackContentsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @mod_pack_content = mod_pack_contents(:one)
+    @mod_pack_content = create(:mod_pack_content)
   end
 
   test "should get index" do
@@ -18,8 +18,11 @@ class ModPackContentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create mod_pack_content" do
+    mod_pack = create(:mod_pack, :without_sub_type)
+    weapon = create(:weapon)
+
     assert_difference("ModPackContent.count") do
-      post mod_pack_contents_url, params: { mod_pack_content: {} }
+      post mod_pack_contents_url, params: { mod_pack_content: { mod_pack_id: mod_pack.id, content_type: "Weapon", content_id: weapon.id } }
     end
 
     assert_redirected_to mod_pack_content_url(ModPackContent.last)
@@ -38,7 +41,7 @@ class ModPackContentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update mod_pack_content" do
-    patch mod_pack_content_url(@mod_pack_content), params: { mod_pack_content: {} }
+    patch mod_pack_content_url(@mod_pack_content), params: { mod_pack_content: { mod_pack_id: @mod_pack_content.mod_pack_id } }
 
     assert_redirected_to mod_pack_content_url(@mod_pack_content)
   end

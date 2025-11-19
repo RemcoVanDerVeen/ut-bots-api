@@ -2,7 +2,7 @@ require "test_helper"
 
 class PlayerModelSkinsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @player_model_skin = player_model_skins(:one)
+    @player_model_skin = create(:player_model_skin)
   end
 
   test "should get index" do
@@ -18,8 +18,10 @@ class PlayerModelSkinsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create player_model_skin" do
+    player_model = create(:player_model)
+
     assert_difference("PlayerModelSkin.count") do
-      post player_model_skins_url, params: { player_model_skin: {} }
+      post player_model_skins_url, params: { player_model_skin: { name: "Skin 2", ut_value: "Skin2", player_model_id: player_model.id } }
     end
 
     assert_redirected_to player_model_skin_url(PlayerModelSkin.last)
@@ -38,7 +40,7 @@ class PlayerModelSkinsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update player_model_skin" do
-    patch player_model_skin_url(@player_model_skin), params: { player_model_skin: {} }
+    patch player_model_skin_url(@player_model_skin), params: { player_model_skin: { name: @player_model_skin.name } }
 
     assert_redirected_to player_model_skin_url(@player_model_skin)
   end

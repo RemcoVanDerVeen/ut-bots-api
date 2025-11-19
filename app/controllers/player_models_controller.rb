@@ -65,6 +65,6 @@ class PlayerModelsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def player_model_params
-      params.fetch(:player_model, {})
+      params.require(:player_model).permit(:name, :description, :ut_value, :vanilla)
     end
 end

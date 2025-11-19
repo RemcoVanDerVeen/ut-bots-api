@@ -65,6 +65,6 @@ class XbotsConfigurationBotlistsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def xbots_configuration_botlist_params
-      params.fetch(:xbots_configuration_botlist, {})
+      params.require(:xbots_configuration_botlist).permit(:xbots_configuration_id, :botlist_id, :position, :is_enabled)
     end
 end

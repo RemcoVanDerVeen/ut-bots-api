@@ -2,7 +2,7 @@ require "test_helper"
 
 class BotsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @bot = bots(:one)
+    @bot = create(:bot)
   end
 
   test "should get index" do
@@ -18,8 +18,29 @@ class BotsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create bot" do
+    combat_style = create(:combat_style)
+    model = create(:player_model)
+    skin = create(:player_model_skin)
+    face = create(:player_model_skin_face)
+    voice_pack = create(:voice_pack)
+    colour = create(:colour)
+
     assert_difference("Bot.count") do
-      post bots_url, params: { bot: { name: @bot.name } }
+      post bots_url, params: { bot: {
+        name: "NewBot",
+        has_jumpy_behaviour: false,
+        skill_adjust: 0,
+        bot_accuracy: 0,
+        alertness: 0,
+        camping: 0,
+        strafing_ability: 0,
+        combat_style_id: combat_style.id,
+        model_id: model.id,
+        skin_id: skin.id,
+        face_id: face.id,
+        voice_pack_id: voice_pack.id,
+        colour_id: colour.id
+      } }
     end
 
     assert_redirected_to bot_url(Bot.last)

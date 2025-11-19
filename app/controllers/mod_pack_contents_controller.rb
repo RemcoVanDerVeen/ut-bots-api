@@ -65,6 +65,6 @@ class ModPackContentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mod_pack_content_params
-      params.fetch(:mod_pack_content, {})
+      params.require(:mod_pack_content).permit(:mod_pack_id, :content_type, :content_id)
     end
 end

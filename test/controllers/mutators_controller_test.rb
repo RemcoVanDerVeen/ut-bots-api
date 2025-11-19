@@ -2,7 +2,7 @@ require "test_helper"
 
 class MutatorsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @mutator = mutators(:one)
+    @mutator = create(:mutator)
   end
 
   test "should get index" do

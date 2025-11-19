@@ -1,6 +1,6 @@
 class Botlist < ApplicationRecord
-  belongs_to :xbots_configuration, optional: true
+  has_many :xbots_configuration_botlists
+  has_many :xbots_configurations, through: :xbots_configuration_botlists
 
   validates :name, presence: true
-  validates :position, uniqueness: { scope: :xbots_configuration }, allow_nil: true
 end

@@ -2,7 +2,7 @@ require "test_helper"
 
 class GameModesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @game_mode = game_modes(:one)
+    @game_mode = create(:game_mode)
   end
 
   test "should get index" do
@@ -19,7 +19,7 @@ class GameModesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create game_mode" do
     assert_difference("GameMode.count") do
-      post game_modes_url, params: { game_mode: {} }
+      post game_modes_url, params: { game_mode: { name: "Team Deathmatch", ut_value: "TeamGame" } }
     end
 
     assert_redirected_to game_mode_url(GameMode.last)
@@ -38,7 +38,7 @@ class GameModesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update game_mode" do
-    patch game_mode_url(@game_mode), params: { game_mode: {} }
+    patch game_mode_url(@game_mode), params: { game_mode: { name: @game_mode.name } }
 
     assert_redirected_to game_mode_url(@game_mode)
   end

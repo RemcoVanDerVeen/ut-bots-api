@@ -65,6 +65,6 @@ class TeamBotsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def team_bot_params
-      params.fetch(:team_bot, {})
+      params.require(:team_bot).permit(:bot_id, :team_id, :position, :is_enabled, :is_captain, :is_human)
     end
 end

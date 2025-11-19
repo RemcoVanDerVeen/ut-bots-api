@@ -2,7 +2,7 @@ require "test_helper"
 
 class ModTypesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @mod_type = mod_types(:one)
+    @mod_type = create(:mod_type)
   end
 
   test "should get index" do

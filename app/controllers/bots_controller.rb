@@ -65,6 +65,9 @@ class BotsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bot_params
-      params.require(:bot).permit(:name)
+      params.require(:bot).permit(:name, :has_jumpy_behaviour, :skill_adjust, :bot_accuracy,
+                                   :alertness, :camping, :strafing_ability, :combat_style_id,
+                                   :model_id, :skin_id, :face_id, :voice_pack_id, :colour_id,
+                                   :favourite_weapon_id)
     end
 end

@@ -65,6 +65,6 @@ class ModSubTypesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mod_sub_type_params
-      params.require(:mod_sub_type).permit(:name)
+      params.require(:mod_sub_type).permit(:name, :mod_type_id)
     end
 end

@@ -65,6 +65,6 @@ class ModPacksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mod_pack_params
-      params.require(:mod_pack).permit(:name)
+      params.require(:mod_pack).permit(:name, :mod_type_id, :mod_sub_type_id)
     end
 end

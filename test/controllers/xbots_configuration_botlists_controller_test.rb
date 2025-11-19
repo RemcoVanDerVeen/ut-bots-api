@@ -2,7 +2,7 @@ require "test_helper"
 
 class XbotsConfigurationBotlistsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @xbots_configuration_botlist = xbots_configuration_botlists(:one)
+    @xbots_configuration_botlist = create(:xbots_configuration_botlist)
   end
 
   test "should get index" do
@@ -18,8 +18,11 @@ class XbotsConfigurationBotlistsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create xbots_configuration_botlist" do
+    xbots_configuration = create(:xbots_configuration)
+    botlist = create(:botlist)
+
     assert_difference("XbotsConfigurationBotlist.count") do
-      post xbots_configuration_botlists_url, params: { xbots_configuration_botlist: {} }
+      post xbots_configuration_botlists_url, params: { xbots_configuration_botlist: { xbots_configuration_id: xbots_configuration.id, botlist_id: botlist.id, position: 2 } }
     end
 
     assert_redirected_to xbots_configuration_botlist_url(XbotsConfigurationBotlist.last)
@@ -38,7 +41,7 @@ class XbotsConfigurationBotlistsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update xbots_configuration_botlist" do
-    patch xbots_configuration_botlist_url(@xbots_configuration_botlist), params: { xbots_configuration_botlist: {} }
+    patch xbots_configuration_botlist_url(@xbots_configuration_botlist), params: { xbots_configuration_botlist: { position: @xbots_configuration_botlist.position } }
 
     assert_redirected_to xbots_configuration_botlist_url(@xbots_configuration_botlist)
   end

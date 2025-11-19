@@ -2,7 +2,7 @@ require "test_helper"
 
 class BotlistsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @botlist = botlists(:one)
+    @botlist = create(:botlist)
   end
 
   test "should get index" do
@@ -19,7 +19,7 @@ class BotlistsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create botlist" do
     assert_difference("Botlist.count") do
-      post botlists_url, params: { botlist: {} }
+      post botlists_url, params: { botlist: { name: "New Botlist", description: "Test description" } }
     end
 
     assert_redirected_to botlist_url(Botlist.last)
@@ -38,7 +38,7 @@ class BotlistsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update botlist" do
-    patch botlist_url(@botlist), params: { botlist: {} }
+    patch botlist_url(@botlist), params: { botlist: { name: @botlist.name } }
 
     assert_redirected_to botlist_url(@botlist)
   end

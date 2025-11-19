@@ -19,7 +19,7 @@ class CreateBots < ActiveRecord::Migration[7.0]
       t.integer :strafing_ability
       t.decimal :strafing_ability_ut, precision: 4, scale: 2
       t.references :combat_style, index: true, foreign_key: true, null: false
-      t.boolean :has_jumpy_behaviour, null: false, default: false
+      t.boolean :has_jumpy_behaviour, default: false
 
       t.timestamps
     end

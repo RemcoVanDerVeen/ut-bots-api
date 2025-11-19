@@ -2,7 +2,7 @@ require "test_helper"
 
 class AuthorsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @author = authors(:one)
+    @author = create(:author)
   end
 
   test "should get index" do
@@ -19,10 +19,12 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create author" do
     assert_difference("Author.count") do
-      post authors_url, params: { author: { description: @author.description, name: @author.name } }
+      post authors_url, params: { author: { name: "New Name", nickname: "newauthor" } }
     end
 
-    assert_redirected_to author_url(Author.last)
+    new_author = Author.find_by(nickname: "newauthor")
+
+    assert_redirected_to author_url(new_author)
   end
 
   test "should show author" do
@@ -38,7 +40,7 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update author" do
-    patch author_url(@author), params: { author: { description: @author.description, name: @author.name } }
+    patch author_url(@author), params: { author: { name: @author.name, nickname: @author.nickname } }
 
     assert_redirected_to author_url(@author)
   end
