@@ -19,6 +19,12 @@ linter:
   enabled: true
   include:
     - '**/*.html.erb'
+  exclude:
+    - 'vendor/**'
+    - 'node_modules/**'
+    - 'tmp/**'
+    - 'log/**'
+    - 'storage/**'
   # Add specific linter rules configuration as needed
 
 # Parser configuration

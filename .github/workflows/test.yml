@@ -58,7 +58,7 @@ jobs:
           bundler-cache: true
 
       - name: Run Herb Linter
-        run: bundle exec herb analyze .
+        run: bundle exec herb analyze app/views
 
   # brakeman:
   #   runs-on: ubuntu-latest
