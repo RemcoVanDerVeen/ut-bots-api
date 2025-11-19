@@ -2,7 +2,7 @@ class PlayerModelsController < ApplicationController
   before_action :set_player_model, only: %i[ show edit update destroy ]
 
   def index
-    @player_models = PlayerModel.joins(:player_model_skins)
+    @player_models = PlayerModel.left_joins(:player_model_skins)
   end
 
   def show

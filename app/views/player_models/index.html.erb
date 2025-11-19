@@ -20,9 +20,8 @@
         <% @player_models.each do |player_model| %>
           <tr>
             <td><%= player_model.name %></td>
-            <td><%= player_model.description %></td>
             <td><%= player_model.vanilla ? "Yes" : "No" %></td>
-            <td><%= player_model.ut_value %></td>
+            <td class="ut-value"><%= player_model.ut_value %></td>
             <td><%= player_model.player_model_skins.count %></td>
             <td><%= link_to "Show", player_model_path(player_model), class: "btn btn-primary" %></td>
           </tr>

@@ -14,7 +14,7 @@
       <% @colours.each do |colour| %>
         <tr style="color: <%= colour.hex %>">
           <td><%= colour.name %></td>
-          <td><%= colour.ut_value %></td>
+          <td class="ut-value"><%= colour.ut_value.to_i %></td>
         </tr>
       <% end %>
     </tbody>
