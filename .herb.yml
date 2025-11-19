@@ -1,0 +1,27 @@
+# Herb configuration
+# https://herb-tools.dev/
+
+# Language Server configuration
+language_server:
+  enabled: true
+  diagnostics: true
+
+# Formatter configuration
+formatter:
+  enabled: true
+  # Note: Herb formatter is currently in experimental preview
+  # Use with caution on version-controlled files
+  indent_width: 2
+  line_width: 120
+
+# Linter configuration
+linter:
+  enabled: true
+  include:
+    - '**/*.html.erb'
+  # Add specific linter rules configuration as needed
+
+# Parser configuration
+parser:
+  # Additional parser options if needed
+  strict: false

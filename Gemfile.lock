@@ -101,6 +101,8 @@ GEM
       i18n (>= 1.8.11, < 2)
     globalid (1.3.0)
       activesupport (>= 6.1)
+    herb (0.8.2-x86_64-linux-gnu)
+    herb (0.8.2-x86_64-linux-musl)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.2.2)
@@ -289,6 +291,7 @@ DEPENDENCIES
   debug
   factory_bot_rails
   faker
+  herb
   importmap-rails
   jbuilder
   pg (~> 1.6.2)
