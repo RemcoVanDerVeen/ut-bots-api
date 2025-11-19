@@ -8,7 +8,10 @@
 
 puts "env: #{ENV["RAILS_ENV"]}"
 
-load "/app/db/seeds/development/combat_styles.rb"
-load "/app/db/seeds/development/player_models.rb"
-load "/app/db/seeds/development/voice_packs.rb"
-load "/app/db/seeds/development/weapons.rb"
+if Rails.env.development?
+  load "/app/db/seeds/development/colours.rb"
+  load "/app/db/seeds/development/combat_styles.rb"
+  load "/app/db/seeds/development/player_models.rb"
+  load "/app/db/seeds/development/voice_packs.rb"
+  load "/app/db/seeds/development/weapons.rb"
+end

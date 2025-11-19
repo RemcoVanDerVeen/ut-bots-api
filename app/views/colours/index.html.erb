@@ -1,14 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Colours</h1>
+<h1>Team Colours</h1>
 
 <div id="colours">
-  <% @colours.each do |colour| %>
-    <%= render colour %>
-    <p>
-      <%= link_to "Show this colour", colour %>
-    </p>
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>UT value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @colours.each do |colour| %>
+        <tr style="color: <%= colour.hex %>">
+          <td><%= colour.name %></td>
+          <td><%= colour.ut_value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-
-<%= link_to "New colour", new_colour_path %>

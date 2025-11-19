@@ -1,26 +1,24 @@
-<div class="container-fluid">
-  <p style="color: green"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
-  <h1>Combat styles</h1>
+<h1>Combat styles</h1>
 
-  <div id="combat_styles">
-    <table>
-      <thead>
+<div id="combat_styles">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>UT value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @combat_styles.each do |combat_style| %>
         <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>UT value</th>
+          <td><%= combat_style.name %></td>
+          <td><%= combat_style.description %></td>
+          <td><%= combat_style.ut_value %></td>
         </tr>
-      </thead>
-      <tbody>
-        <% @combat_styles.each do |combat_style| %>
-          <tr>
-            <td><%= combat_style.name %></td>
-            <td><%= combat_style.description %></td>
-            <td><%= combat_style.ut_value %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+      <% end %>
+    </tbody>
+  </table>
 </div>

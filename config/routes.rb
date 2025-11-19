@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :botlist_bots
   resources :botlists
   resources :bots
-  resources :colours
+  resources :colours, only: [ :index ]
   resources :combat_styles, only: [ :index ]
   resources :game_modes
   resources :maps
