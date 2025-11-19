@@ -18,8 +18,10 @@ class PlayerModelSkinFacesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create player_model_skin_face" do
+    player_model_skin = create(:player_model_skin)
+
     assert_difference("PlayerModelSkinFace.count") do
-      post player_model_skin_faces_url, params: { player_model_skin_face: {} }
+      post player_model_skin_faces_url, params: { player_model_skin_face: { name: "Face 2", ut_value: "Face2", player_model_skin_id: player_model_skin.id } }
     end
 
     assert_redirected_to player_model_skin_face_url(PlayerModelSkinFace.last)
@@ -38,7 +40,7 @@ class PlayerModelSkinFacesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update player_model_skin_face" do
-    patch player_model_skin_face_url(@player_model_skin_face), params: { player_model_skin_face: {} }
+    patch player_model_skin_face_url(@player_model_skin_face), params: { player_model_skin_face: { name: @player_model_skin_face.name } }
 
     assert_redirected_to player_model_skin_face_url(@player_model_skin_face)
   end

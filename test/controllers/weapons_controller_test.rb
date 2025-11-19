@@ -19,10 +19,12 @@ class WeaponsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create weapon" do
     assert_difference("Weapon.count") do
-      post weapons_url, params: { weapon: { description: @weapon.description, ut_value: "TestWeapon", vanilla: @weapon.vanilla, name: @weapon.name } }
+      post weapons_url, params: { weapon: { name: "Rocket Launcher", description: "Explosive weapon", ut_value: "RocketLauncher", vanilla: true } }
     end
 
-    assert_redirected_to weapon_url(Weapon.last)
+    new_weapon = Weapon.find_by(name: "Rocket Launcher")
+
+    assert_redirected_to weapon_url(new_weapon)
   end
 
   test "should show weapon" do

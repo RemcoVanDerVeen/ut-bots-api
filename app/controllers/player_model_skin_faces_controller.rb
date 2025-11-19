@@ -65,6 +65,6 @@ class PlayerModelSkinFacesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def player_model_skin_face_params
-      params.fetch(:player_model_skin_face, {})
+      params.require(:player_model_skin_face).permit(:name, :description, :ut_value, :vanilla, :player_model_skin_id)
     end
 end

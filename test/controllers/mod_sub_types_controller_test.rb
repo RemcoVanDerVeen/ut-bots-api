@@ -18,8 +18,10 @@ class ModSubTypesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create mod_sub_type" do
+    mod_type = create(:mod_type)
+
     assert_difference("ModSubType.count") do
-      post mod_sub_types_url, params: { mod_sub_type: { name: @mod_sub_type.name } }
+      post mod_sub_types_url, params: { mod_sub_type: { name: "New Sub Type", mod_type_id: mod_type.id } }
     end
 
     assert_redirected_to mod_sub_type_url(ModSubType.last)

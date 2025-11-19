@@ -18,8 +18,10 @@ class RatingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create rating" do
+    bot = create(:bot)
+
     assert_difference("Rating.count") do
-      post ratings_url, params: { rating: { value: @rating.value } }
+      post ratings_url, params: { rating: { value: 8, rateable_type: "Bot", rateable_id: bot.id } }
     end
 
     assert_redirected_to rating_url(Rating.last)

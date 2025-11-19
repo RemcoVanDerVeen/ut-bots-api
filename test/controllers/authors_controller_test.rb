@@ -19,10 +19,12 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create author" do
     assert_difference("Author.count") do
-      post authors_url, params: { author: { name: @author.name, nickname: "newauthor" } }
+      post authors_url, params: { author: { name: "New Name", nickname: "newauthor" } }
     end
 
-    assert_redirected_to author_url(Author.last)
+    new_author = Author.find_by(nickname: "newauthor")
+
+    assert_redirected_to author_url(new_author)
   end
 
   test "should show author" do

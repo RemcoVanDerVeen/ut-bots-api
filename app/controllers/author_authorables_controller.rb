@@ -1,70 +1,70 @@
-class AuthorablesController < ApplicationController
-  before_action :set_authorable, only: %i[ show edit update destroy ]
+class AuthorAuthorablesController < ApplicationController
+  before_action :set_author_authorable, only: %i[ show edit update destroy ]
 
-  # GET /authorables or /authorables.json
+  # GET /author_authorables or /author_authorables.json
   def index
-    @authorables = Authorable.all
+    @author_authorables = AuthorAuthorable.all
   end
 
-  # GET /authorables/1 or /authorables/1.json
+  # GET /author_authorables/1 or /author_authorables/1.json
   def show
   end
 
-  # GET /authorables/new
+  # GET /author_authorables/new
   def new
-    @authorable = Authorable.new
+    @author_authorable = AuthorAuthorable.new
   end
 
-  # GET /authorables/1/edit
+  # GET /author_authorables/1/edit
   def edit
   end
 
-  # POST /authorables or /authorables.json
+  # POST /author_authorables or /author_authorables.json
   def create
-    @authorable = Authorable.new(authorable_params)
+    @author_authorable = AuthorAuthorable.new(author_authorable_params)
 
     respond_to do |format|
-      if @authorable.save
-        format.html { redirect_to authorable_url(@authorable), notice: "Authorable was successfully created." }
-        format.json { render :show, status: :created, location: @authorable }
+      if @author_authorable.save
+        format.html { redirect_to author_authorable_url(@author_authorable), notice: "Author authorable was successfully created." }
+        format.json { render :show, status: :created, location: @author_authorable }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @authorable.errors, status: :unprocessable_entity }
+        format.json { render json: @author_authorable.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /authorables/1 or /authorables/1.json
+  # PATCH/PUT /author_authorables/1 or /author_authorables/1.json
   def update
     respond_to do |format|
-      if @authorable.update(authorable_params)
-        format.html { redirect_to authorable_url(@authorable), notice: "Authorable was successfully updated." }
-        format.json { render :show, status: :ok, location: @authorable }
+      if @author_authorable.update(author_authorable_params)
+        format.html { redirect_to author_authorable_url(@author_authorable), notice: "Author authorable was successfully updated." }
+        format.json { render :show, status: :ok, location: @author_authorable }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @authorable.errors, status: :unprocessable_entity }
+        format.json { render json: @author_authorable.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /authorables/1 or /authorables/1.json
+  # DELETE /author_authorables/1 or /author_authorables/1.json
   def destroy
-    @authorable.destroy
+    @author_authorable.destroy
 
     respond_to do |format|
-      format.html { redirect_to authorables_url, notice: "Authorable was successfully destroyed." }
+      format.html { redirect_to author_authorables_url, notice: "Author authorable was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_authorable
-      @authorable = Authorable.find(params[:id])
+    def set_author_authorable
+      @author_authorable = AuthorAuthorable.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def authorable_params
-      params.fetch(:authorable, {})
+    def author_authorable_params
+      params.require(:author_authorable).permit(:author_id, :authorable_type, :authorable_id)
     end
 end

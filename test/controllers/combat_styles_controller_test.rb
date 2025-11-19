@@ -19,7 +19,7 @@ class CombatStylesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create combat_style" do
     assert_difference("CombatStyle.count") do
-      post combat_styles_url, params: { combat_style: {} }
+      post combat_styles_url, params: { combat_style: { name: "New Style", ut_value: 0.0 } }
     end
 
     assert_redirected_to combat_style_url(CombatStyle.last)
@@ -38,7 +38,7 @@ class CombatStylesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update combat_style" do
-    patch combat_style_url(@combat_style), params: { combat_style: {} }
+    patch combat_style_url(@combat_style), params: { combat_style: { name: @combat_style.name } }
 
     assert_redirected_to combat_style_url(@combat_style)
   end

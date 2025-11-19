@@ -18,8 +18,11 @@ class BotlistBotsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create botlist_bot" do
+    bot = create(:bot)
+    botlist = create(:botlist)
+
     assert_difference("BotlistBot.count") do
-      post botlist_bots_url, params: { botlist_bot: {} }
+      post botlist_bots_url, params: { botlist_bot: { bot_id: bot.id, botlist_id: botlist.id, position: 1 } }
     end
 
     assert_redirected_to botlist_bot_url(BotlistBot.last)
@@ -38,7 +41,7 @@ class BotlistBotsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update botlist_bot" do
-    patch botlist_bot_url(@botlist_bot), params: { botlist_bot: {} }
+    patch botlist_bot_url(@botlist_bot), params: { botlist_bot: { position: 2 } }
 
     assert_redirected_to botlist_bot_url(@botlist_bot)
   end

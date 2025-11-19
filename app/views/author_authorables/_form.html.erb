@@ -1,10 +1,10 @@
-<%= form_with(model: authorable) do |form| %>
-  <% if authorable.errors.any? %>
+<%= form_with(model: author_authorable) do |form| %>
+  <% if author_authorable.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(authorable.errors.count, "error") %> prohibited this authorable from being saved:</h2>
+      <h2><%= pluralize(author_authorable.errors.count, "error") %> prohibited this author authorable from being saved:</h2>
 
       <ul>
-        <% authorable.errors.each do |error| %>
+        <% author_authorable.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>

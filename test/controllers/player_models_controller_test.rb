@@ -19,7 +19,7 @@ class PlayerModelsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create player_model" do
     assert_difference("PlayerModel.count") do
-      post player_models_url, params: { player_model: {} }
+      post player_models_url, params: { player_model: { name: "Nali Soldier", ut_value: "NaliSoldier" } }
     end
 
     assert_redirected_to player_model_url(PlayerModel.last)
@@ -38,7 +38,7 @@ class PlayerModelsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update player_model" do
-    patch player_model_url(@player_model), params: { player_model: {} }
+    patch player_model_url(@player_model), params: { player_model: { name: @player_model.name } }
 
     assert_redirected_to player_model_url(@player_model)
   end

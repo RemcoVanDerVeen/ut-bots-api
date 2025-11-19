@@ -19,7 +19,7 @@ class XbotsConfigurationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create xbots_configuration" do
     assert_difference("XbotsConfiguration.count") do
-      post xbots_configurations_url, params: { xbots_configuration: {} }
+      post xbots_configurations_url, params: { xbots_configuration: { name: "New Configuration" } }
     end
 
     assert_redirected_to xbots_configuration_url(XbotsConfiguration.last)
@@ -38,7 +38,7 @@ class XbotsConfigurationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update xbots_configuration" do
-    patch xbots_configuration_url(@xbots_configuration), params: { xbots_configuration: {} }
+    patch xbots_configuration_url(@xbots_configuration), params: { xbots_configuration: { name: @xbots_configuration.name } }
 
     assert_redirected_to xbots_configuration_url(@xbots_configuration)
   end
