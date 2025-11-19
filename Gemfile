@@ -23,6 +23,9 @@ group :development do
   gem "web-console"
   gem "debug"
 
+  # Herb: HTML-aware ERB parsing and tooling
+  gem "herb"
+
   gem "rubocop", require: false
   gem "rubocop-rails-omakase", require: false
   gem "rubocop-performance", require: false

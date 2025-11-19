@@ -46,6 +46,20 @@ jobs:
       - name: Run rubocop
         run: bundle exec rubocop
 
+  herb:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{env.RUBY_VERSION}}
+          bundler-cache: true
+
+      - name: Run Herb Linter
+        run: bundle exec herb analyze app/views
+
   # brakeman:
   #   runs-on: ubuntu-latest
   #   steps:
