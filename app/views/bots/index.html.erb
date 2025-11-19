@@ -2,13 +2,30 @@
 
 <h1>Bots</h1>
 
+<%= link_to "New bot", new_bot_path, class: "btn btn-primary" %>
+
 <div id="bots">
-  <% @bots.each do |bot| %>
-    <%= render bot %>
-    <p>
-      <%= link_to "Show this bot", bot %>
-    </p>
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Teams</th>
+        <th>Model</th>
+        <th>Skin</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bots.each do |bot| %>
+        <tr>
+          <td><%= bot.name %></td>
+          <td><%= bot.teams.map(&:name).join(", ") %></td>
+          <td><%= bot.model.name %></td>
+          <td><%= bot.skin.name %></td>
+          <td><%= link_to "Show", bot_path(bot), class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New bot", new_bot_path %>

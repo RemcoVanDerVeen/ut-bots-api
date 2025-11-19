@@ -7,6 +7,9 @@ class Bot < ApplicationRecord
   belongs_to :skin, class_name: "PlayerModelSkin", optional: false # scope by model
   belongs_to :voice_pack, optional: false # scope by model
 
+  has_many :team_bots
+  has_many :teams, through: :team_bots
+
   validates :name, presence: true
   validates :skill_adjust, numericality: { in: -3..3 } # intervals of 1
   validates :bot_accuracy, :alertness, numericality: { in: -1..1 } # intervals of 0.05

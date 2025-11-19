@@ -2,13 +2,25 @@
 
 <h1>Authors</h1>
 
-<div id="authors">
-  <% @authors.each do |author| %>
-    <%= render author %>
-    <p>
-      <%= link_to "Show this author", author %>
-    </p>
-  <% end %>
-</div>
+<%= link_to "New author", new_author_path, class: "btn btn-primary" %>
 
-<%= link_to "New author", new_author_path %>
+<div id="authors">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Nickname</th>
+        <th>Number of Authorables</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @authors.each do |author| %>
+        <tr>
+          <td><%= author.name %></td>
+          <td><%= author.nickname %></td>
+          <td><%= author.authorables.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
