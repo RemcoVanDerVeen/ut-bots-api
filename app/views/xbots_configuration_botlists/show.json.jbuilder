@@ -1,1 +1,0 @@
-json.partial! "xbots_configuration_botlists/xbots_configuration_botlist", xbots_configuration_botlist: @xbots_configuration_botlist
