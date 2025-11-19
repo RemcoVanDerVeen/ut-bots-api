@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :botlists
   resources :bots
   resources :colours
-  resources :combat_styles
+  resources :combat_styles, only: [ :index ]
   resources :game_modes
   resources :maps
   resources :mod_pack_contents

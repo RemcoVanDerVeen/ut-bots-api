@@ -10,44 +10,4 @@ class CombatStylesControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
   end
-
-  test "should get new" do
-    get new_combat_style_url
-
-    assert_response :success
-  end
-
-  test "should create combat_style" do
-    assert_difference("CombatStyle.count") do
-      post combat_styles_url, params: { combat_style: { name: "New Style", ut_value: 0.0 } }
-    end
-
-    assert_redirected_to combat_style_url(CombatStyle.last)
-  end
-
-  test "should show combat_style" do
-    get combat_style_url(@combat_style)
-
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_combat_style_url(@combat_style)
-
-    assert_response :success
-  end
-
-  test "should update combat_style" do
-    patch combat_style_url(@combat_style), params: { combat_style: { name: @combat_style.name } }
-
-    assert_redirected_to combat_style_url(@combat_style)
-  end
-
-  test "should destroy combat_style" do
-    assert_difference("CombatStyle.count", -1) do
-      delete combat_style_url(@combat_style)
-    end
-
-    assert_redirected_to combat_styles_url
-  end
 end
