@@ -1,13 +1,28 @@
-<div class="container-fluid">
-  <p style="color: green"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
-  <h1>Voice packs</h1>
+<h1>Voice packs</h1>
 
-  <%= link_to "New voice pack", new_voice_pack_path, class: "btn btn-primary" %>
-  <br/>
-  <br/>
+<%= link_to "New voice pack", new_voice_pack_path, class: "btn btn-primary" %>
 
-  <div id="voice_packs">
-    <%= render "shared/index", collection: @voice_packs %>
-  </div>
+<div id="voice_packs">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Vanilla</th>
+        <th>UT Value</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @voice_packs.each do |voice_pack| %>
+        <tr>
+          <td><%= voice_pack.name %></td>
+          <td><%= voice_pack.vanilla ? "Yes" : "No" %></td>
+          <td class="ut-value"><%= voice_pack.ut_value %></td>
+          <td><%= link_to "Show", voice_pack_path(voice_pack), class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

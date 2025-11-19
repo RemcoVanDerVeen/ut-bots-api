@@ -1,13 +1,26 @@
-<div class="container-fluid">
+<div dom_id="<%= @voice_pack %>" class="card">  
   <p style="color: green"><%= notice %></p>
 
+  <h1><%= @voice_pack.name %></h1>
+
   <%= link_to "Return to index", voice_packs_path, class: "btn btn-primary btn-sm" %>
-  <br/>
-  <br/>
-
-  <%= render @voice_pack %>
-
-  <br/>
   <%= link_to "Edit", edit_voice_pack_path(@voice_pack), class: "btn btn-primary btn-sm" %>
   <%= button_to "Destroy", @voice_pack, method: :delete, class: "btn btn-outline-danger btn-sm" %>
+
+  <h4>Description</h4>
+  <p><%= @voice_pack.description.presence || '-' %></p>
+
+  <h4>Vanilla?</h4>
+  <p><%= @voice_pack.vanilla? ? "Yes" : "No" %></p>
+
+  <h4>Has all sounds?</h4>
+  <p><%= @voice_pack.has_all_sounds? ? "Yes" : "No" %></p>
+
+  <h4>UT Value</h4>
+  <p class="ut-value"><%= @voice_pack.ut_value %></p>
+
+  <hr>
+
+  <h4>Associated player models</h4>
+  <%= render "player_models", collection: @voice_pack.player_models %>
 </div>
