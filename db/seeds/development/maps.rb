@@ -1,4 +1,4 @@
-AUTHORS = [
+MAP_AUTHORS = [
   ALAN_WILLARD = { name: 'Alan Willard', nickname: 'Talisman' },
   CEDRIC_FIORENTINO = { name: 'Cedric Fiorentino', nickname: 'Inoxx' },
   CLAUDE_MEYER = { name: 'Claude Meyer', nickname: 'Claude Meyer' },
@@ -16,7 +16,7 @@ AUTHORS = [
   WARREN_MARSHALL = { name: 'Warren Marshall', nickname: 'Warren Marshall' }
 ].freeze
 
-GAME_MODES = [
+MAP_GAME_MODES = [
   DEATHMATCH = [ 'DM', 'TDM', 'LMS' ],
   DOMINATION = [ 'DOM' ],
   ASSAULT = [ 'AS' ],

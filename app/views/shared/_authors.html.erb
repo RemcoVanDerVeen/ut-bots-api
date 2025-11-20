@@ -1,0 +1,16 @@
+<table class="table table-nested">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Nickname</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% collection.each do |author| %>
+      <tr>
+        <td><%= author.name %></td>
+        <td><%= author.nickname %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

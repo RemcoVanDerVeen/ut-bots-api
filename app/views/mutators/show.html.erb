@@ -1,10 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<div dom-id="<%= @mutator %>" class="card">
+  <p style="color: green"><%= notice %></p>
 
-<%= render @mutator %>
+  <h1><%= @mutator.name %></h1>
 
-<div>
-  <%= link_to "Edit this mutator", edit_mutator_path(@mutator) %> |
-  <%= link_to "Back to mutators", mutators_path %>
+  <%= link_to "Return to index", mutators_path, class: "btn btn-primary btn-sm" %>
+  <%= link_to "Edit", edit_mutator_path(@mutator), class: "btn btn-primary btn-sm" %>
+  <%= button_to "Destroy", @mutator, method: :delete, class: "btn btn-outline-danger btn-sm" %>
 
-  <%= button_to "Destroy this mutator", @mutator, method: :delete %>
+  <h4>Description</h4>
+  <p><%= @mutator.description.presence || '-' %></p>
+
+  <h4>Vanilla?</h4>
+  <p><%= @mutator.vanilla? ? "Yes" : "No" %></p>
+
+  <hr>
+
+  <h4>Associated authors</h4>
+  <%= render "shared/authors", collection: @mutator.authors %>
 </div>

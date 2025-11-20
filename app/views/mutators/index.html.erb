@@ -2,13 +2,27 @@
 
 <h1>Mutators</h1>
 
-<div id="mutators">
-  <% @mutators.each do |mutator| %>
-    <%= render mutator %>
-    <p>
-      <%= link_to "Show this mutator", mutator %>
-    </p>
-  <% end %>
-</div>
+<%= link_to "New mutator", new_mutator_path, class: "btn btn-primary" %>
 
-<%= link_to "New mutator", new_mutator_path %>
+<div id="mutators">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Vanilla</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @mutators.each do |mutator| %>
+        <tr>
+          <td><%= mutator.name %></td>
+          <td><%= mutator.description %></td>
+          <td><%= mutator.vanilla? ? "Yes" : "No" %></td>
+          <td><%= link_to "Show", mutator_path(mutator), class: "btn btn-sm" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -16,4 +16,5 @@ if Rails.env.development?
   load "/app/db/seeds/development/weapons.rb"
   load "/app/db/seeds/development/game_modes.rb"
   load "/app/db/seeds/development/maps.rb"
+  load "/app/db/seeds/development/mutators.rb"
 end
