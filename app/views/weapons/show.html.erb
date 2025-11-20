@@ -1,8 +1,8 @@
-<div dom_id="<%= @weapon %>" class="card">
+<div dom-id="<%= @weapon %>" class="card">
   <p style="color: green"><%= notice %></p>
 
   <h1><%= @weapon.name %></h1>
-  
+
   <%= link_to "Return to index", weapons_path, class: "btn btn-primary btn-sm" %>
   <%= link_to "Edit", edit_weapon_path(@weapon), class: "btn btn-primary btn-sm" %>
   <%= button_to "Destroy", @weapon, method: :delete, class: "btn btn-outline-danger btn-sm" %>

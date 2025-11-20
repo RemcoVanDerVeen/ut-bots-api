@@ -1,0 +1,22 @@
+<div class="table table-nested">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Vanilla</th>
+        <th>UT Value</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% collection.each do |skins| %>
+        <tr>
+          <td><%= skin.name %></td>
+          <td><%= skin.vanilla? ? "Yes" : "No" %></td>
+          <td class="ut-value"><%= skin.ut_value %></td>
+          <td><%= link_to "Show", player_model_skin_path(skin), class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

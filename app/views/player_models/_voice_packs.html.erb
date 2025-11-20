@@ -1,0 +1,22 @@
+<div class="table table-nested">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Vanilla</th>
+        <th>UT Value</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% collection.each do |voice_pack| %>
+        <tr>
+          <td><%= voice_pack.name %></td>
+          <td><%= voice_pack.vanilla? ? "Yes" : "No" %></td>
+          <td class="ut-value"><%= voice_pack.ut_value %></td>
+          <td><%= link_to "Show", voice_pack_path(voice_pack), class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
