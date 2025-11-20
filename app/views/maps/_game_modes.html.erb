@@ -1,0 +1,22 @@
+<div class="table table-nested">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Vanilla</th>
+        <th>UT Value</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% collection.each do |game_mode| %>
+        <tr>
+          <td><%= game_mode.name %></td>
+          <td><%= game_mode.vanilla? ? "Yes" : "No" %></td>
+          <td class="ut-value"><%= game_mode.ut_value %></td>
+          <td><%= link_to "Show", game_mode_path(game_mode), class: "btn btn-sm" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

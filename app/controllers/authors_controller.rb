@@ -2,7 +2,7 @@ class AuthorsController < ApplicationController
   before_action :set_author, only: %i[ show edit update destroy ]
 
   def index
-    @authors = Author.joins(:author_authorables)
+    @authors = Author.joins(:author_authorables).order(:nickname).distinct
   end
 
   def show

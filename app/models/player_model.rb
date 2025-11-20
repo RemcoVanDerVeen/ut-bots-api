@@ -29,5 +29,8 @@ class PlayerModel < ApplicationRecord
   has_many :player_model_voice_packs
   has_many :voice_packs, through: :player_model_voice_packs
 
+  has_many :author_authorables, as: :authorable
+  has_many :authors, through: :author_authorables
+
   validates :name, :ut_value, presence: true
 end

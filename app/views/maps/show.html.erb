@@ -1,10 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<div dom-id="<%= @map %>" class="card">
+  <p style="color: green"><%= notice %></p>
 
-<%= render @map %>
+  <h1><%= @map.name %></h1>
 
-<div>
-  <%= link_to "Edit this map", edit_map_path(@map) %> |
-  <%= link_to "Back to maps", maps_path %>
+  <%= link_to "Return to index", maps_path, class: "btn btn-primary btn-sm" %>
+  <%= link_to "Edit", edit_map_path(@map), class: "btn btn-primary btn-sm" %>
+  <%= button_to "Destroy", @map, method: :delete, class: "btn btn-outline-danger btn-sm" %>
 
-  <%= button_to "Destroy this map", @map, method: :delete %>
+  <h4>Description</h4>
+  <p><%= @map.description.presence || '-' %></p>
+
+  <h4>Vanilla?</h4>
+  <p><%= @map.vanilla? ? "Yes" : "No" %></p>
+
+  <hr>
+
+  <h4>Associated game modes</h4>
+  <%= render "game_modes", collection: @map.game_modes %>
 </div>

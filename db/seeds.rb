@@ -15,4 +15,5 @@ if Rails.env.development?
   load "/app/db/seeds/development/voice_packs.rb"
   load "/app/db/seeds/development/weapons.rb"
   load "/app/db/seeds/development/game_modes.rb"
+  load "/app/db/seeds/development/maps.rb"
 end

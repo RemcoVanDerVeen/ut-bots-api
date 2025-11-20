@@ -3,6 +3,9 @@ class GameMode < ApplicationRecord
   has_many :maps, through: :game_mode_maps
   has_many :mutators
 
+  has_many :author_authorables, as: :authorable
+  has_many :authors, through: :author_authorables
+
   default_scope { order_by_name }
 
   validates :name, :ut_value, presence: true
