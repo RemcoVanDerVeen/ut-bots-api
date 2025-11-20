@@ -94,7 +94,14 @@ puts "Creating vanilla maps..."
   VANILLA_CTF_MAPS
 ].each do |map_data|
   map_data.each do |map_attrs|
-    Map.where(name: map_attrs[:name], description: map_attrs[:description], vanilla: map_attrs[:vanilla]).first_or_create! do |map|
+    Map.where(name: map_attrs[:name]).first_or_create! do |map|
+      map.description = map_attrs[:description]
+      map.min_players = map_attrs[:min_players]
+      map.max_players = map_attrs[:max_players]
+      map.vanilla = true if map_attrs[:vanilla].is_a?(TrueClass)
+      map.save!
+      puts "***#{map.name} added!***"
+
       map_attrs[:authors].each do |author_attrs|
         author = Author.where(name: author_attrs[:name], nickname: author_attrs[:nickname]).first_or_create!
         puts "***#{map.name} author: #{author.nickname}!***"
@@ -108,8 +115,6 @@ puts "Creating vanilla maps..."
           map.game_modes << game_mode
         end
       end
-
-      puts "***#{map.name} added!***"
     end
   end
 end
