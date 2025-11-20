@@ -3,7 +3,7 @@ class CreateMaps < ActiveRecord::Migration[7.0]
     create_table :maps do |t|
       t.string :name, null: false
       t.string :description
-      t.references :game_mode, index: true, foreign_key: true
+      t.boolean :vanilla, null: false, default: false
 
       t.timestamps
     end

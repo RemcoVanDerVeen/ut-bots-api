@@ -1,4 +1,6 @@
 class GameMode < ApplicationRecord
+  has_many :game_mode_maps
+  has_many :maps, through: :game_mode_maps
   has_many :mutators
 
   default_scope { order_by_name }

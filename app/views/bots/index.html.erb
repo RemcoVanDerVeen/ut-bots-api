@@ -22,10 +22,9 @@
           <td><%= bot.teams.map(&:name).join(", ") %></td>
           <td><%= bot.model.name %></td>
           <td><%= bot.skin.name %></td>
-          <td><%= link_to "Show", bot_path(bot), class: "btn btn-primary" %></td>
+          <td><%= link_to "Show", bot_path(bot), class: "btn btn-sm" %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
-

@@ -1,30 +1,28 @@
-<div class="container-fluid">
-  <p style="color: green"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
-  <h1>Game Modes</h1>
+<h1>Game Modes</h1>
 
-  <%= link_to "New game mode", new_game_mode_path, class: "btn btn-primary" %>
-  <br/>
-  <br/>
+<%= link_to "New game mode", new_game_mode_path, class: "btn btn-primary" %>
 
-  <div id="game_modes">
-    <ul class="list-group">
+<div id="game_modes">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Vanilla</th>
+        <th>UT Value</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
       <% @game_modes.each do |game_mode| %>
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-sm-4">
-              <%= game_mode.name %>
-
-              <% if game_mode.vanilla %>
-                <span class="badge bg-warning">Vanilla</span>
-              <% end %>
-            </div>
-            <div class="col-sm-2">
-              <%= link_to "Show", game_mode %>
-            </div>
-          </div>
-        </li>
+        <tr>
+          <td><%= game_mode.name %></td>
+          <td><%= game_mode.vanilla? ? "Yes" : "No" %></td>
+          <td class="ut-value"><%= game_mode.ut_value %></td>
+          <td><%= link_to "Show", game_mode_path(game_mode), class: "btn btn-sm" %></td>
+        </tr>
       <% end %>
-    </ul>
-  </div>
+    </tbody>
+  </table>
 </div>

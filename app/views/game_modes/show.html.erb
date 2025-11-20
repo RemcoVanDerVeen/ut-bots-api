@@ -1,13 +1,23 @@
 <div class="container-fluid">
   <p style="color: green"><%= notice %></p>
 
+  <h1><%= @game_mode.name %></h1>
+
   <%= link_to "Return to index", game_modes_path, class: "btn btn-primary btn-sm" %>
-  <br/>
-  <br/>
-
-  <%= render @game_mode %>
-
-  <br/>
   <%= link_to "Edit", edit_game_mode_path(@game_mode), class: "btn btn-primary btn-sm" %>
   <%= link_to "Destroy", @game_mode, method: :delete, class: "btn btn-outline-dangeer btn-sm" %>
+
+  <h4>Description</h4>
+  <p><%= @game_mode.description.presence || '-' %></p>
+
+  <h4>Vanilla?</h4>
+  <p><%= @game_mode.vanilla? ? "Yes" : "No" %></p>
+
+  <h4>UT Value</h4>
+  <p class="ut-value"><%= @game_mode.ut_value %></p>
+
+  <hr>
+
+  <h4>Associated maps</h4>
+  <%= render "maps", collection: @game_mode.maps %>
 </div>

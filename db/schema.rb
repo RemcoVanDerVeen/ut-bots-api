@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_11_18_220256) do
+ActiveRecord::Schema[8.1].define(version: 2025_11_20_084730) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -97,6 +97,15 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_18_220256) do
     t.string "name", null: false
     t.datetime "updated_at", null: false
     t.decimal "ut_value", precision: 4, scale: 2, null: false
+  end
+
+  create_table "game_mode_maps", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "game_mode_id", null: false
+    t.bigint "map_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_mode_id"], name: "index_game_mode_maps_on_game_mode_id"
+    t.index ["map_id"], name: "index_game_mode_maps_on_map_id"
   end
 
   create_table "game_modes", force: :cascade do |t|
@@ -280,6 +289,8 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_18_220256) do
   add_foreign_key "bots", "player_models", column: "model_id"
   add_foreign_key "bots", "voice_packs"
   add_foreign_key "bots", "weapons", column: "favourite_weapon_id"
+  add_foreign_key "game_mode_maps", "game_modes"
+  add_foreign_key "game_mode_maps", "maps"
   add_foreign_key "maps", "game_modes"
   add_foreign_key "mod_pack_contents", "mod_packs"
   add_foreign_key "mod_packs", "mod_sub_types"

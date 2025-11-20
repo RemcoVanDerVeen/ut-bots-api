@@ -11,6 +11,7 @@
         <th>Name</th>
         <th>Nickname</th>
         <th>Number of Authorables</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +20,7 @@
           <td><%= author.name %></td>
           <td><%= author.nickname %></td>
           <td><%= author.author_authorables.count %></td>
+          <td><%= link_to "Show", author_path(author), class: "btn btn-sm" %></td>
         </tr>
       <% end %>
     </tbody>

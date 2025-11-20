@@ -13,8 +13,4 @@ class MapTest < ActiveSupport::TestCase
     assert_not map.valid?
     assert_includes map.errors[:name], "can't be blank"
   end
-
-  test "should belong to game_mode optionally" do
-    assert_respond_to Map.new, :game_mode
-  end
 end

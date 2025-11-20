@@ -1,0 +1,21 @@
+<div class="table table-nested">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Vanilla</th>
+        <th>UT Value</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% collection.each do |map| %>
+        <tr>
+          <td><%= map.name %></td>
+          <td><%= map.vanilla? ? "Yes" : "No" %></td>
+          <td><%= link_to "Show", map_path(map), class: "btn btn-sm" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
