@@ -1,10 +1,31 @@
-<p style="color: green"><%= notice %></p>
+<div dom-id="<%= @player_model_skin %>" class="card">
+  <p style="color: green"><%= notice %></p>
 
-<%= render @player_model_skin %>
+  <h1><%= @player_model_skin.name %></h1>
 
-<div>
-  <%= link_to "Edit this player model skin", edit_player_model_skin_path(@player_model_skin) %> |
-  <%= link_to "Back to player model skins", player_model_skins_path %>
+  <%= link_to "Return to index", player_model_skins_path, class: "btn btn-primary btn-sm" %>
+  <%= link_to "Edit", edit_player_model_skin_path(@player_model_skin), class: "btn btn-primary btn-sm" %>
+  <%= button_to "Destroy", @player_model_skin, method: :delete, class: "btn btn-outline-danger btn-sm" %>
 
-  <%= button_to "Destroy this player model skin", @player_model_skin, method: :delete %>
+  <h4>Description</h4>
+  <p><%= @player_model_skin.description.presence || '-' %></p>
+
+  <h4>Vanilla?</h4>
+  <p><%= @player_model_skin.vanilla? ? "Yes" : "No" %></p>
+
+  <h4>UT Value</h4>
+  <p class="ut-value"><%= @player_model_skin.ut_value %></p>
+
+  <h4>Has all colours?</h4>
+  <p><%= @player_model_skin.has_all_colours? ? "Yes" : "No" %></p>
+
+  <% if @player_model_skin.player_model_skin_faces.any? %>
+    <h4>Associated player model faces</h4>
+    <%= render "player_model_skin_faces", collection: @player_model_skin.player_model_skin_faces %>
+  <% end %>
+
+  <% if @player_model_skin.bots.any? %>
+    <h4>Associated bots</h4>
+    <%= render "shared/bots", collection: @player_model_skin.bots %>
+  <% end %>
 </div>

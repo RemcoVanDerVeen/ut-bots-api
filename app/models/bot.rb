@@ -15,4 +15,8 @@ class Bot < ApplicationRecord
   validates :bot_accuracy, :alertness, numericality: { in: -1..1 } # intervals of 0.05
   validates :camping, numericality: { in: 0..1 } # intervals of 0.10
   validates :strafing_ability, numericality: { in: -1..1 } # intervals of 0.25
+
+  def team_names
+    teams.map(&:name).join(", ")
+  end
 end

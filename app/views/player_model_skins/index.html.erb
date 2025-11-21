@@ -2,13 +2,31 @@
 
 <h1>Player model skins</h1>
 
-<div id="player_model_skins">
-  <% @player_model_skins.each do |player_model_skin| %>
-    <%= render player_model_skin %>
-    <p>
-      <%= link_to "Show this player model skin", player_model_skin %>
-    </p>
-  <% end %>
-</div>
+<%= link_to "New player model skin", new_player_model_skin_path, class: "btn btn-primary" %>
 
-<%= link_to "New player model skin", new_player_model_skin_path %>
+<div id="player_model_skins">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Player Model</th>
+        <th>Vanilla</th>
+        <th>UT Value</th>
+        <th>Number of Faces</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @player_model_skins.each do |player_model_skin| %>
+        <tr>
+          <td><%= player_model_skin.name %></td>
+          <td><%= player_model_skin.player_model.name %></td>
+          <td><%= player_model_skin.vanilla? ? "Yes" : "No" %></td>
+          <td class="ut-value"><%= player_model_skin.ut_value %></td>
+          <td><%= player_model_skin.player_model_skin_faces.count %></td>
+          <td><%= link_to "Show", player_model_skin_path(player_model_skin), class: "btn btn-sm" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

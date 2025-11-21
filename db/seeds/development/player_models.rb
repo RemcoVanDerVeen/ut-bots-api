@@ -3,12 +3,15 @@ VANILLA_MODELS = [
   { name: 'Female Commando', description: 'A female commando model', ut_value: 'BotPack.TFemale1Bot', vanilla: true },
   { name: 'Female Soldier', description: 'A female soldier model', ut_value: 'BotPack.TFemale2Bot', vanilla: true },
   { name: 'Male Commando', description: 'A male commando model', ut_value: 'BotPack.TMale1Bot', vanilla: true },
-  { name: 'Male Soldier', description: 'A male soldier model', ut_value: 'BotPack.TMale2Bot', vanilla: true },
-  { name: 'Nali', description: 'A Nali model', ut_value: 'BotPack.TNali2bot', vanilla: true },
-  { name: 'Nali WarCow', description: 'Moo!', ut_value: 'cowfix.tcowbotfixed', vanilla: true },
-  { name: 'Skaarj Hybrid', description: 'A skaarj hybrid model', ut_value: 'MultiMesh.TSkaarjBot', vanilla: true },
-  { name: 'Warboss', description: 'Warboss model from the Bonus Pack 4', ut_value: 'SkeletalCharsFix313.WarBossBotFix313', vanilla: true },
-  { name: 'Xan Mark II', description: 'Xan Mark II model from the Bonus Pack 4', ut_value: 'SkeletalCharsFix313.XanMk2BotFix313', vanilla: true }
+  { name: 'Male Soldier', description: 'A male soldier model', ut_value: 'BotPack.TMale2Bot', vanilla: true }
+].freeze
+
+BONUS_PACK_MODELS = [
+  { name: 'Nali', description: 'A Nali model', ut_value: 'BotPack.TNali2bot' },
+  { name: 'Nali WarCow', description: 'Moo!', ut_value: 'cowfix.tcowbotfixed' },
+  { name: 'Skaarj Hybrid', description: 'A skaarj hybrid model', ut_value: 'MultiMesh.TSkaarjBot' },
+  { name: 'Warboss', description: 'Warboss model from the Bonus Pack 4', ut_value: 'SkeletalCharsFix313.WarBossBotFix313' },
+  { name: 'Xan Mark II', description: 'Xan Mark II model from the Bonus Pack 4', ut_value: 'SkeletalCharsFix313.XanMk2BotFix313' }
 ].freeze
 
 CUSTOM_MODELS = [

@@ -1,0 +1,16 @@
+<table class="table table-nested">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Teams</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% collection.each do |bot| %>
+      <tr>
+        <td><%= bot.name %></td>
+        <td><%= bot.team_names %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

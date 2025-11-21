@@ -5,5 +5,7 @@ class PlayerModelSkin < ApplicationRecord
   has_many :author_authorables, as: :authorable
   has_many :authors, through: :author_authorables
 
+  has_many :bots, foreign_key: :skin_id
+
   validates :name, :ut_value, presence: true
 end

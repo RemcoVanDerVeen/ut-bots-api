@@ -1,0 +1,20 @@
+<div class="table table-nested">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Vanilla</th>
+        <th>UT Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% collection.each do |face| %>
+        <tr>
+          <td><%= face.name %></td>
+          <td><%= face.vanilla? ? "Yes" : "No" %></td>
+          <td class="ut-value"><%= face.ut_value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

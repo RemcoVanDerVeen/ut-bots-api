@@ -16,13 +16,18 @@
   <h4>UT Value</h4>
   <p class="ut-value"><%= @player_model.ut_value %></p>
 
-  <hr>
+  <% if @player_model.player_model_skins.any? %>
+    <h4>Associated player model skins</h4>
+    <%= render "skins", collection: @player_model.player_model_skins %>
+  <% end %>
 
-  <h4>Associated voice packs</h4>
-  <%= render "voice_packs", collection: @player_model.voice_packs %>
+  <% if @player_model.bots.any? %>
+    <h4>Associated bots</h4>
+    <%= render "shared/bots", collection: @player_model.bots %>
+  <% end %>
 
-  <hr>
-
-  <h4>Associated player model skins</h4>
-  <%= render "skins", collection: @player_model.player_model_skins %>
+  <% if @player_model.voice_packs.any? %>
+    <h4>Associated voice packs</h4>
+    <%= render "voice_packs", collection: @player_model.voice_packs %>
+  <% end %>
 </div>

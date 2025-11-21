@@ -25,6 +25,7 @@ class PlayerModel < ApplicationRecord
     "Xan Mark II"
   ].freeze
 
+  has_many :bots, foreign_key: :model_id
   has_many :player_model_skins
   has_many :player_model_voice_packs
   has_many :voice_packs, through: :player_model_voice_packs
