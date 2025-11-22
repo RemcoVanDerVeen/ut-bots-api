@@ -1,10 +1,44 @@
 <p style="color: green"><%= notice %></p>
+<p style="color: orange"><%= flash[:warning] %></p>
 
-<%= render @xbots_configuration %>
+<% 
+  import_errors = if flash[:import_errors_key].present?
+    Rails.cache.read(flash[:import_errors_key]) || []
+  elsif flash[:import_errors].present?
+    flash[:import_errors]
+  else
+    []
+  end
+%>
 
-<div>
-  <%= link_to "Edit this xbots configuration", edit_xbots_configuration_path(@xbots_configuration) %> |
-  <%= link_to "Back to xbots configurations", xbots_configurations_path %>
+<% if import_errors.any? %>
+  <div style="background-color: #fff3cd; border: 1px solid #ffc107; padding: 15px; margin-bottom: 20px; max-height: 400px; overflow-y: auto;">
+    <h4 style="color: #856404; margin-top: 0;">Import Errors (<%= import_errors.count %>):</h4>
+    <p style="color: #856404; margin: 10px 0;">
+      <strong>Tip:</strong> Check the Rails log for more detailed debugging information.
+    </p>
+    <ul style="margin: 0; padding-left: 20px;">
+      <% import_errors.each do |error| %>
+        <li style="color: #856404; margin-bottom: 5px;"><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
-  <%= button_to "Destroy this xbots configuration", @xbots_configuration, method: :delete %>
-</div>
+<h1><%= @xbots_configuration.name %></h1>
+
+<%= link_to "Edit this xbots configuration", edit_xbots_configuration_path(@xbots_configuration), class: "btn btn-primary" %>
+<%= link_to "Back to xbots configurations", xbots_configurations_path, class: "btn btn-primary" %>
+<%= button_to "Destroy this xbots configuration", @xbots_configuration, method: :delete, class: "btn btn-danger" %>
+
+<h4>Description</h4>
+<p><%= @xbots_configuration.description %></p>
+
+<h4>Is Active</h4>
+<p><%= @xbots_configuration.is_active ? "Yes" : "No" %></p>
+
+<h4>Is Enabled</h4>
+<p><%= @xbots_configuration.is_enabled ? "Yes" : "No" %></p>
+
+<h4>Botlists</h4>
+<%= render "botlists", collection: @xbots_configuration.botlists %>

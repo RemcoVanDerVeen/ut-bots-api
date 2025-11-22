@@ -2,13 +2,25 @@
 
 <h1>Xbots configurations</h1>
 
-<div id="xbots_configurations">
-  <% @xbots_configurations.each do |xbots_configuration| %>
-    <%= render xbots_configuration %>
-    <p>
-      <%= link_to "Show this xbots configuration", xbots_configuration %>
-    </p>
-  <% end %>
-</div>
+<%= link_to "New xbots configuration", new_xbots_configuration_path, class: "btn btn-primary" %>
+|
+<%= link_to "Import from INI file", new_xbots_import_path, class: "btn btn-primary" %>
 
-<%= link_to "New xbots configuration", new_xbots_configuration_path %>
+<div id="xbots_configurations">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @xbots_configurations.each do |xbots_configuration| %>
+        <tr>
+          <td><%= xbots_configuration.name %></td>
+          <td><%= link_to "Show", xbots_configuration_path(xbots_configuration), class: "btn btn-sm" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

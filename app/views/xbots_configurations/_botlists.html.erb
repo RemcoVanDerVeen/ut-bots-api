@@ -1,10 +1,4 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Botlists</h1>
-
-<%= link_to "New botlist", new_botlist_path, class: "btn btn-primary" %>
-
-<div id="botlists">
+<div class="table table-nested">
   <table>
     <thead>
       <tr>
@@ -15,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @botlists.each do |botlist| %>
+      <% collection.each do |botlist| %>
         <tr>
           <td><%= botlist.name %></td>
           <td><%= botlist.description %></td>

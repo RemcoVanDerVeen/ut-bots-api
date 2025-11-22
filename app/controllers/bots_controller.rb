@@ -2,7 +2,7 @@ class BotsController < ApplicationController
   before_action :set_bot, only: %i[ show edit update destroy ]
 
   def index
-    @bots = Bot.joins(:teams, :model, :skin)
+    @bots = Bot.includes(:teams, :model, :skin)
   end
 
   def show

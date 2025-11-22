@@ -11,10 +11,10 @@ class Bot < ApplicationRecord
   has_many :teams, through: :team_bots
 
   validates :name, presence: true
-  validates :skill_adjust, numericality: { in: -3..3 } # intervals of 1
-  validates :bot_accuracy, :alertness, numericality: { in: -1..1 } # intervals of 0.05
-  validates :camping, numericality: { in: 0..1 } # intervals of 0.10
-  validates :strafing_ability, numericality: { in: -1..1 } # intervals of 0.25
+  # validates :skill_adjust, numericality: { in: -3..3 } # intervals of 1
+  # validates :bot_accuracy, :alertness, numericality: { in: -1..1 } # intervals of 0.05
+  # validates :camping, numericality: { in: 0..1 } # intervals of 0.10
+  # validates :strafing_ability, numericality: { in: -1..1 } # intervals of 0.25
 
   def team_names
     teams.map(&:name).join(", ")
