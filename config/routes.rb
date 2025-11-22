@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   resources :weapons
   resources :xbots_configuration_botlists
   resources :xbots_configurations
+  resources :xbots_imports, only: [ :new, :create ]
 end

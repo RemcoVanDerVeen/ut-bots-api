@@ -1,0 +1,61 @@
+<p style="color: green"><%= notice %></p>
+<p style="color: red"><%= alert %></p>
+
+<% if flash[:import_errors].present? %>
+  <div style="background-color: #f8d7da; border: 1px solid #f5c6cb; padding: 15px; margin-bottom: 20px; max-height: 400px; overflow-y: auto;">
+    <h4 style="color: #721c24; margin-top: 0;">Import Errors (<%= flash[:import_errors].count %>):</h4>
+    <ul style="margin: 0; padding-left: 20px;">
+      <% flash[:import_errors].each do |error| %>
+        <li style="color: #721c24; margin-bottom: 5px;"><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<h1>Import XBots Configuration</h1>
+
+<p>
+  Upload an XBots INI file to import botlists and bots into the database.
+  The file can contain multiple botlists, which will be grouped under a single XBots Configuration.
+</p>
+
+<%= form_with scope: :xbots_import, url: xbots_imports_path, multipart: true do |form| %>
+  <div>
+    <%= form.label :configuration_name, "Configuration Name (optional)" %>
+    <br>
+    <%= form.text_field :configuration_name, placeholder: "Leave blank for auto-generated name" %>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <%= form.label :file, "Select INI File" %>
+    <br>
+    <%= form.file_field :file, accept: ".ini", required: true %>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <%= form.submit "Import", style: "padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer;" %>
+  </div>
+<% end %>
+
+<div style="margin-top: 30px;">
+  <%= link_to "Back to XBots Configurations", xbots_configurations_path %>
+</div>
+
+<div style="margin-top: 30px; padding: 15px; background-color: #f0f0f0; border-left: 4px solid #2196F3;">
+  <h3>File Format</h3>
+  <p>
+    The import expects XBots INI files with the following format:
+  </p>
+  <ul>
+    <li>One or more botlist sections, each starting with <code>[XBots.XBotsBotInfoL##]</code></li>
+    <li>Each section contains arrays for bot properties (BotNames, BotClasses, BotSkins, etc.)</li>
+    <li>The importer will automatically create or find existing PlayerModels, Skins, Faces, VoicePacks, and Bots</li>
+  </ul>
+  
+  <h4>Example files:</h4>
+  <ul>
+    <li>XBotsLists_1-2.ini</li>
+    <li>XBotsLists_3-4.ini</li>
+    <li>BotList_Single.ini</li>
+  </ul>
+</div>
